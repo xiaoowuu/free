@@ -1,7 +1,7 @@
 
 ## Contribution guide
 
-TeaTV application searches movie/tv/anime links on the web (using __Nodejs__):
+ application searches movie/tv/anime links on the web (using __Nodejs__):
 1. Step 1 (Provider Crawler): From input information, search across supported providers for embed links
 2. Step 2 (Url Resolver): Convert embed links (host) to direct links.
 
@@ -40,4 +40,4 @@ The structure of code in `host_or_provider_name.js` will be shown in sample code
 ### Where can I find providers & hosts
 
 - Google
-- Our [Todo providers](https://github.com/TeaTV/TeaTV-macOS/blob/master/misc/todo_providers.json) list & [Todo hosts](https://github.com/TeaTV/TeaTV-macOS/blob/master/misc/todo_host.json) list
+
