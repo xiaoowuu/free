@@ -1,16 +1,3 @@
-## Dear users
-
-TeaTV will have add-ons system. This is our new documentation for contributing add-ons.
-
-Note: The documentation is not finished and will be updated.
-
-## What are add-ons and what do they do?
-
-Add-ons are some kind of code that was developed by third-party developers. Add-ons can locally & remotely be installed in TeaTV Desktop.
-
-TeaTV Add-ons have one main purpose and that's providing more sources to get more links and get better movie watching experience.
-
-With some basic knowledge of programming, you can totally make somes add-ons, use it to enjoy the movies you like.
 
 ## Contribution guide
 
