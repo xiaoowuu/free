@@ -6,16 +6,16 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Vidcloud = function () {
-    function Vidcloud(props) {
-        _classCallCheck(this, Vidcloud);
+var VidcloudOnl = function () {
+    function VidcloudOnl(props) {
+        _classCallCheck(this, VidcloudOnl);
 
         this.libs = props.libs;
         this.settings = props.settings;
         this.state = {};
     }
 
-    _createClass(Vidcloud, [{
+    _createClass(VidcloudOnl, [{
         key: 'checkLive',
         value: function () {
             var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(url) {
@@ -50,61 +50,56 @@ var Vidcloud = function () {
         key: 'getLink',
         value: function () {
             var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url) {
-                var _libs, httpRequest, cheerio, sources, html, reg, m;
+                var _libs, httpRequest, cheerio, m, sources, html, link, isDie;
 
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
                         switch (_context2.prev = _context2.next) {
                             case 0:
                                 _libs = this.libs, httpRequest = _libs.httpRequest, cheerio = _libs.cheerio;
+                                m = url.match(/\/embed\/(.*)\??/);
+
+                                url = 'https://vidcloud.online/player?fid=' + m[1] + '&page=embed';
+
                                 sources = [];
-                                _context2.next = 4;
+                                _context2.next = 6;
                                 return this.checkLive(url);
 
-                            case 4:
+                            case 6:
                                 html = _context2.sent;
 
                                 if (!(html == false)) {
-                                    _context2.next = 8;
+                                    _context2.next = 10;
                                     break;
                                 }
 
-                                console.log('vidtodo no link');
-                                throw new Error("vidtodo LINK DIE");
-
-                            case 8:
-                                reg = /file:\s?'?"?([^'?"?]+)/g;
-                                m = void 0;
+                                console.log('VidcloudOnl no link');
+                                throw new Error("VidcloudOnl LINK DIE");
 
                             case 10:
-                                if (!(m = reg.exec(html))) {
-                                    _context2.next = 16;
-                                    break;
+
+                                html = JSON.parse(html)['html'];
+                                m = html.match(/sources = ([^,]+)/);
+                                link = JSON.parse(m[1])[0]['file'];
+                                isDie = 'NOR';
+
+
+                                console.log('VidcloudOnl', link, isDie);
+
+                                if (isDie != false) {
+
+                                    sources.push({
+                                        label: 'NOR',
+                                        file: link,
+                                        type: "direct",
+                                        size: (Math.random() * (2.2 - 1.9) + 0.5).toFixed(2)
+                                    });
                                 }
 
-                                if (!(m[1].indexOf('m3u8') == -1)) {
-                                    _context2.next = 13;
-                                    break;
-                                }
-
-                                return _context2.abrupt('continue', 10);
-
-                            case 13:
-
-                                sources.push({
-                                    label: 'NOR',
-                                    file: m[1],
-                                    type: "direct",
-                                    size: "NOR"
-                                });
-                                _context2.next = 10;
-                                break;
-
-                            case 16:
                                 return _context2.abrupt('return', {
                                     host: {
                                         url: url,
-                                        name: "Vidcloud"
+                                        name: "VidcloudOnl"
                                     },
                                     result: sources
                                 });
@@ -125,9 +120,9 @@ var Vidcloud = function () {
         }()
     }]);
 
-    return Vidcloud;
+    return VidcloudOnl;
 }();
 
 thisSource.function = function (libs, settings) {
-    return new Vidcloud({ libs: libs, settings: settings });
+    return new VidcloudOnl({ libs: libs, settings: settings });
 };
