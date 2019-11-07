@@ -129,18 +129,14 @@ var Onlystream = function () {
                                                 switch (_context2.prev = _context2.next) {
                                                     case 0:
                                                         str = str.split('"')[1];
-                                                        _context2.next = 3;
-                                                        return httpRequest.isLinkDie(str);
-
-                                                    case 3:
-                                                        aSize = _context2.sent;
+                                                        aSize = false; //await httpRequest.isLinkDie(str);
 
                                                         aSize = aSize === false ? 'NOR' : aSize;
                                                         results.push({
                                                             file: str, label: 'NOR', type: "direct", size: aSize
                                                         });
 
-                                                    case 6:
+                                                    case 4:
                                                     case 'end':
                                                         return _context2.stop();
                                                 }

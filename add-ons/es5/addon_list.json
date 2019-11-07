@@ -866,15 +866,15 @@
             "domain": [
                 "vshare.eu"
             ],
-            "version": "0.0.6",
+            "version": "0.0.7",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vshare.js"
         },
         "jetload": {
-            "name": "vshare",
+            "name": "jetload",
             "domain": [
                 "jetload.net"
             ],
-            "version": "0.0.2",
+            "version": "0.0.3",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/jetload.js"
         },
         "playeernet": {
@@ -892,6 +892,14 @@
             ],
             "version": "0.0.5",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/onlystream.js"
+        },
+        "mixdrop": {
+            "name": "mixdrop",
+            "domain": [
+                "mixdrop.co"
+            ],
+            "version": "0.0.1",
+            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/mixdrop.js"
         }
     }
 }
