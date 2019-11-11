@@ -775,7 +775,7 @@
             "domain": [
                 "gounlimited.to"
             ],
-            "version": "0.0.18",
+            "version": "0.0.19",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/gounlimited.js"
         },
         "viduplayer": {
@@ -900,6 +900,14 @@
             ],
             "version": "0.0.1",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/mixdrop.js"
+        },
+        "cloudvideo": {
+            "name": "cloudvideo",
+            "domain": [
+                "cloudvideo.tv"
+            ],
+            "version": "0.0.1",
+            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/cloudvideo.js"
         }
     }
 }

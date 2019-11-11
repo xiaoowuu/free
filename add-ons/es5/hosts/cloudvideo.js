@@ -6,16 +6,16 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Gounlimited = function () {
-    function Gounlimited(props) {
-        _classCallCheck(this, Gounlimited);
+var Cloudvideo = function () {
+    function Cloudvideo(props) {
+        _classCallCheck(this, Cloudvideo);
 
         this.libs = props.libs;
         this.settings = props.settings;
         this.state = {};
     }
 
-    _createClass(Gounlimited, [{
+    _createClass(Cloudvideo, [{
         key: 'checkLive',
         value: function () {
             var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(url) {
@@ -35,7 +35,7 @@ var Gounlimited = function () {
                                 httpRequest = this.libs.httpRequest;
                                 _context.prev = 3;
                                 _context.next = 6;
-                                return httpRequest.getHTML(url, { 'User-Agent': 'Firefox 69' });
+                                return httpRequest.getHTML(url);
 
                             case 6:
                                 html = _context.sent;
@@ -45,7 +45,7 @@ var Gounlimited = function () {
                             case 9:
                                 _context.prev = 9;
                                 _context.t0 = _context['catch'](3);
-                                throw new Error('NOT_FOUND gounlimited');
+                                throw new Error('NOT_FOUND');
 
                             case 12:
                                 return _context.abrupt('return', html);
@@ -68,7 +68,7 @@ var Gounlimited = function () {
         key: 'getLink',
         value: function () {
             var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url) {
-                var _libs, httpRequest, cheerio, results, html, m, hls, sv, domain, fuck, hls1, sv1, domain1, isDie;
+                var _libs, httpRequest, cheerio, results, html, $, u, isDie, s;
 
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
@@ -82,111 +82,51 @@ var Gounlimited = function () {
                                 throw new Error("LINK DIE");
 
                             case 2:
-
-                                url = url.replace('https://', 'http://'); //
-
                                 _libs = this.libs, httpRequest = _libs.httpRequest, cheerio = _libs.cheerio;
                                 results = [];
-                                _context2.next = 7;
+                                _context2.next = 6;
                                 return this.checkLive(url);
 
-                            case 7:
+                            case 6:
                                 html = _context2.sent;
 
                                 if (!(html == false)) {
-                                    _context2.next = 10;
-                                    break;
-                                }
-
-                                throw new Error("LINK DIE gounlimited");
-
-                            case 10:
-                                m = html.split('eval(')[2];
-
-                                m = m.split('</script>')[0];
-                                m = 'eval(' + m;
-                                console.log('gounlimited', m);
-                                _context2.prev = 14;
-
-                                m = m.match(/\|([a-z0-9]+)\|([a-z0-9]+)\|sources/);
-                                hls = m[1];
-                                sv = m[2];
-                                domain = 'https://' + sv + '.gounlimited.to/';
-                                fuck = domain + hls + '/v.mp4';
-
-                                console.log(fuck);
-                                _context2.next = 42;
-                                break;
-
-                            case 23:
-                                _context2.prev = 23;
-                                _context2.t0 = _context2['catch'](14);
-
-                                m = html.split('eval(')[1];
-                                m = m.split('</script>')[0];
-                                m = 'eval(' + m;
-                                console.log('gounlimited 1', m);
-                                _context2.prev = 29;
-
-                                m = m.match(/\|([a-z0-9]+)\|([a-z0-9]+)\|sources/);
-                                hls1 = m[1];
-                                sv1 = m[2];
-                                domain1 = 'https://' + sv1 + '.gounlimited.to/';
-                                fuck = domain1 + hls1 + '/v.mp4';
-
-                                console.log(fuck1);
-                                _context2.next = 42;
-                                break;
-
-                            case 38:
-                                _context2.prev = 38;
-                                _context2.t1 = _context2['catch'](29);
-
-                                console.log(_context2.t0, _context2.t1, 'err gounlimited');
-                                return _context2.abrupt('return', {
-                                    host: {
-                                        url: url,
-                                        name: "Gounlimited"
-                                    },
-                                    result: []
-                                });
-
-                            case 42:
-                                if (!(fuck.search('https://') == -1 && fuck.search('http://') == -1)) {
-                                    _context2.next = 44;
+                                    _context2.next = 9;
                                     break;
                                 }
 
                                 throw new Error("LINK DIE");
 
-                            case 44:
-                                _context2.next = 46;
-                                return httpRequest.isLinkDie(fuck);
+                            case 9:
+                                $ = cheerio.load(html);
+                                u = $('source').attr('src');
+                                _context2.next = 13;
+                                return httpRequest.isLinkDie(u);
 
-                            case 46:
+                            case 13:
                                 isDie = _context2.sent;
+                                s = {
+                                    label: "NOR",
+                                    file: u,
+                                    type: "direct",
+                                    size: isDie ? isDie : "NOR"
+                                };
 
-
-                                if (isDie != false) {
-                                    results.push({
-                                        file: fuck, label: 'NOR', type: "direct", size: isDie
-                                    });
-                                }
-
+                                results.push(s);
                                 return _context2.abrupt('return', {
                                     host: {
                                         url: url,
-                                        name: "Gounlimited"
+                                        name: "Cloudvideo"
                                     },
                                     result: results
                                 });
 
-                            case 49:
+                            case 17:
                             case 'end':
                                 return _context2.stop();
                         }
                     }
-                }, _callee2, this, [[14, 23], [29, 38]]);
+                }, _callee2, this);
             }));
 
             function getLink(_x2) {
@@ -197,9 +137,9 @@ var Gounlimited = function () {
         }()
     }]);
 
-    return Gounlimited;
+    return Cloudvideo;
 }();
 
 thisSource.function = function (libs, settings) {
-    return new Gounlimited({ libs: libs, settings: settings });
+    return new Cloudvideo({ libs: libs, settings: settings });
 };
