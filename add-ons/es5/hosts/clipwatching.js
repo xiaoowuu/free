@@ -62,7 +62,7 @@ var ClipWatching = function () {
         key: 'getLink',
         value: function () {
             var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url) {
-                var _libs, httpRequest, cheerio, arrVideoQuality, html, results, m, a, ff, reg;
+                var _libs, httpRequest, cheerio, arrVideoQuality, html, results, m, size;
 
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
@@ -85,50 +85,41 @@ var ClipWatching = function () {
 
                             case 7:
                                 results = [];
-                                _context2.prev = 8;
-                                m = void 0, a = void 0;
 
-                                m = html.split('eval(function(p,a,c,k,e,d)')[1];
-                                m = m.split('</script>')[0].trim();
-                                m = 'eval(function(p,a,c,k,e,d)' + m;
-
-                                ff = m.split('return p}')[1];
-
-                                ff = 'a = fuckfuck' + ff;
-                                ff = ff.replace(/\)$/, '');
-                                eval(ff);
-                                reg = /file"?:\s?"([^"]+)/g;
-
-                            case 18:
-                                if (!(m = reg.exec(a))) {
-                                    _context2.next = 24;
-                                    break;
+                                /*
+                                try {
+                                    let m, a;
+                                    m = html.split('eval(function(p,a,c,k,e,d)')[1];
+                                    m = m.split('</script>')[0].trim();
+                                    m = 'eval(function(p,a,c,k,e,d)' + m;
+                                     let ff = m.split('return p}')[1];
+                                    ff = 'a = fuckfuck' + ff;
+                                    ff = ff.replace(/\)$/, '');
+                                    eval(ff);
+                                    let reg = /file"?:\s?"([^"]+)/g;
+                                    while(m = reg.exec(a)) {
+                                        if(m[1].indexOf('jpg') != -1 || m[1].indexOf('png') != -1) continue;
+                                        results.push({
+                                            file: m[1], label: 'NOR', type: "direct" , size: 'NOR'
+                                        });
+                                    }
+                                
+                                } catch(error) {
+                                    throw new Error(error);
                                 }
+                                */
 
-                                if (!(m[1].indexOf('jpg') != -1 || m[1].indexOf('png') != -1)) {
-                                    _context2.next = 21;
-                                    break;
-                                }
+                                m = html.match(/src: "([^"]+)/);
+                                _context2.next = 11;
+                                return httpRequest.isLinkDie(m[1]);
 
-                                return _context2.abrupt('continue', 18);
+                            case 11:
+                                size = _context2.sent;
 
-                            case 21:
                                 results.push({
-                                    file: m[1], label: 'NOR', type: "direct", size: 'NOR'
+                                    file: m[1], label: 'NOR', type: "direct", size: size != false ? size : 'NOR'
                                 });
-                                _context2.next = 18;
-                                break;
 
-                            case 24:
-                                _context2.next = 29;
-                                break;
-
-                            case 26:
-                                _context2.prev = 26;
-                                _context2.t0 = _context2['catch'](8);
-                                throw new Error(_context2.t0);
-
-                            case 29:
                                 return _context2.abrupt('return', {
                                     host: {
                                         url: url,
@@ -137,12 +128,12 @@ var ClipWatching = function () {
                                     result: results
                                 });
 
-                            case 30:
+                            case 14:
                             case 'end':
                                 return _context2.stop();
                         }
                     }
-                }, _callee2, this, [[8, 26]]);
+                }, _callee2, this);
             }));
 
             function getLink(_x2) {
