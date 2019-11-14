@@ -863,14 +863,6 @@
             "version": "0.0.7",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/hls.js"
         },
-        "vidcloudco": {
-            "name": "vidcloudco",
-            "domain": [
-                "vidcloud.co"
-            ],
-            "version": "0.0.6",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vidcloudco.js"
-        },
         "vshare": {
             "name": "vshare",
             "domain": [
