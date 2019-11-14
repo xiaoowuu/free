@@ -118,8 +118,8 @@ var Afdah = function () {
                                 headers = {
                                     'User-Agent': ' Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
                                     'Referer': url
-
                                 };
+
 
                                 try {
                                     u = JSON.parse(url);
@@ -127,21 +127,34 @@ var Afdah = function () {
                                     url = u.url;
                                     headers = {
                                         'cookie': u.cookie,
-                                        'User-Agent': u['User-Agent'],
-                                        'Referer': url
+                                        'user-agent': u['User-Agent'],
+                                        'referer': url,
+                                        'content-type': 'application/x-www-form-urlencoded'
+                                        //'origin': 'https://afdah.info',
+                                        //'sec-fetch-site': 'same-origin',
+                                        //'sec-fetch-mode': 'navigate',
                                     };
                                 } catch (e) {}
 
-                                //console.log(headers);    
+                                console.log(headers);
 
-                                _context.next = 5;
+                                _context.next = 6;
                                 return httpRequest.post(url, headers, { 'play': 'continue', 'x': 0, 'y': 0 });
 
-                            case 5:
+                            case 6:
                                 html = _context.sent;
+
+                                console.log(html, 'ff');
+
+                                /*
+                                let html = await httpRequest.getHTML(url, {
+                                    'User-Agent':' Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36'
+                                });
+                                */
+                                // if(html.includes(dieStatusText)) return true;
                                 return _context.abrupt("return", html.data);
 
-                            case 7:
+                            case 9:
                             case "end":
                                 return _context.stop();
                         }
@@ -190,7 +203,7 @@ var Afdah = function () {
 
                                 console.log(u);
 
-                                if (!(allowCache && true)) {
+                                if (!(allowCache && false)) {
                                     _context3.next = 23;
                                     break;
                                 }
@@ -215,7 +228,7 @@ var Afdah = function () {
 
                                 res = res['data'];
 
-                                if (!res['status']) {
+                                if (!(res['status'] && false)) {
                                     _context3.next = 18;
                                     break;
                                 }
@@ -314,7 +327,7 @@ var Afdah = function () {
                                 }
 
                                 bodyPost['hosts'] = JSON.stringify(sources);
-                                bodyPost['expired'] = 7200;
+                                bodyPost['expired'] = 300;
                                 console.log(bodyPost, 'bPost');
                                 _context3.next = 43;
                                 return httpRequest.post('https://getaz.morphtv.club/source/set', {}, bodyPost);

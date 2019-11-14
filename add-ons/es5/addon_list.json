@@ -726,7 +726,7 @@
             "domain": [
                 "afdah.info"
             ],
-            "version": "0.9.22",
+            "version": "0.9.23",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/afdah.js"
         },
         "vidtodo": {
@@ -908,6 +908,14 @@
             ],
             "version": "0.0.1",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/cloudvideo.js"
+        },
+        "vidiatv": {
+            "name": "vidiatv",
+            "domain": [
+                "vidia.tv"
+            ],
+            "version": "0.0.1",
+            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vidiatv.js"
         }
     }
 }
