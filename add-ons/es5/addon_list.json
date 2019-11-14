@@ -108,6 +108,16 @@
                 "tv"
             ]
         },
+        "hdtopweb": {
+            "name": "hdtopweb",
+            "domain": "hdtopweb.dis",
+            "version": "0.0.11",
+            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/hdtopweb.js",
+            "type": [
+                "movie",
+                "tv"
+            ]
+        },
         "wfree": {
             "name": "wfree",
             "domain": "wfree.dis",
