@@ -89,22 +89,24 @@ var Putload = function () {
                                 ll = htmlDetail.match(/src: "([^"]+)/);
 
                                 if (!(ll != undefined)) {
-                                    _context2.next = 14;
+                                    _context2.next = 13;
                                     break;
                                 }
 
                                 linkHls = ll[1];
-                                isDie = 'NOR'; //await httpRequest.isLinkDie(linkHls);
 
-                                if (isDie != false) {
-                                    sources.push({
-                                        label: 'NOR',
-                                        file: linkHls,
-                                        type: "direct",
-                                        size: (Math.random() * (2.2 - 1.9) + 1.9).toFixed(2)
-                                    });
+                                if (linkHls.indexOf('http') === 0) {
+                                    isDie = 'NOR'; //await httpRequest.isLinkDie(linkHls);
+
+                                    if (isDie != false) {
+                                        sources.push({
+                                            label: 'NOR',
+                                            file: linkHls,
+                                            type: "direct",
+                                            size: (Math.random() * (2.2 - 1.9) + 1.9).toFixed(2)
+                                        });
+                                    }
                                 }
-
                                 return _context2.abrupt('return', {
                                     host: {
                                         url: url,
@@ -113,7 +115,7 @@ var Putload = function () {
                                     result: sources
                                 });
 
-                            case 14:
+                            case 13:
                                 x = htmlDetail.split('return p}').pop();
 
                                 x = 'p = this.decode' + x.split(')))')[0] + '))';
@@ -127,6 +129,12 @@ var Putload = function () {
                                 }
 
                                 linkcdn = l2[0].split('"')[2];
+
+                                if (!(linkcdn.indexOf('http') === 0)) {
+                                    _context2.next = 32;
+                                    break;
+                                }
+
                                 size = false;
                                 _context2.prev = 22;
                                 _context2.next = 25;
@@ -153,15 +161,21 @@ var Putload = function () {
 
                             case 32:
                                 if (!(l1 != undefined)) {
-                                    _context2.next = 38;
+                                    _context2.next = 39;
                                     break;
                                 }
 
                                 _linkHls = l1[1];
-                                _context2.next = 36;
+
+                                if (!(_linkHls.indexOf('http') === 0)) {
+                                    _context2.next = 39;
+                                    break;
+                                }
+
+                                _context2.next = 37;
                                 return httpRequest.isLinkDie(_linkHls);
 
-                            case 36:
+                            case 37:
                                 _isDie = _context2.sent;
 
 
@@ -174,7 +188,7 @@ var Putload = function () {
                                     });
                                 }
 
-                            case 38:
+                            case 39:
                                 return _context2.abrupt('return', {
                                     host: {
                                         url: url,
@@ -183,7 +197,7 @@ var Putload = function () {
                                     result: sources
                                 });
 
-                            case 39:
+                            case 40:
                             case 'end':
                                 return _context2.stop();
                         }

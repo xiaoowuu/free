@@ -101,7 +101,7 @@ var Vidiatv = function () {
 
                             case 18:
                                 if (!(m = reg.exec(a))) {
-                                    _context2.next = 24;
+                                    _context2.next = 26;
                                     break;
                                 }
 
@@ -113,22 +113,30 @@ var Vidiatv = function () {
                                 return _context2.abrupt('continue', 18);
 
                             case 21:
+                                if (!(m[1].indexOf('http') !== 0)) {
+                                    _context2.next = 23;
+                                    break;
+                                }
+
+                                return _context2.abrupt('continue', 18);
+
+                            case 23:
                                 results.push({
                                     file: m[1], label: 'NOR', type: "direct", size: 'NOR'
                                 });
                                 _context2.next = 18;
                                 break;
 
-                            case 24:
-                                _context2.next = 29;
+                            case 26:
+                                _context2.next = 31;
                                 break;
 
-                            case 26:
-                                _context2.prev = 26;
+                            case 28:
+                                _context2.prev = 28;
                                 _context2.t0 = _context2['catch'](8);
                                 throw new Error(_context2.t0);
 
-                            case 29:
+                            case 31:
                                 return _context2.abrupt('return', {
                                     host: {
                                         url: url,
@@ -137,12 +145,12 @@ var Vidiatv = function () {
                                     result: results
                                 });
 
-                            case 30:
+                            case 32:
                             case 'end':
                                 return _context2.stop();
                         }
                     }
-                }, _callee2, this, [[8, 26]]);
+                }, _callee2, this, [[8, 28]]);
             }));
 
             function getLink(_x2) {

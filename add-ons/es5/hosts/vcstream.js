@@ -151,10 +151,19 @@ var Vcstream = function () {
                                 js = JSON.parse(s);
 
                                 playLink = js[0].file;
-                                _context2.next = 33;
-                                return httpRequest.isLinkDie(playLink);
+
+                                if (!(playLink.indexOf('http') !== 0)) {
+                                    _context2.next = 33;
+                                    break;
+                                }
+
+                                throw new Error('Invalid Link');
 
                             case 33:
+                                _context2.next = 35;
+                                return httpRequest.isLinkDie(playLink);
+
+                            case 35:
                                 isDie = _context2.sent;
 
 
@@ -175,7 +184,7 @@ var Vcstream = function () {
                                     result: sources
                                 });
 
-                            case 36:
+                            case 38:
                             case 'end':
                                 return _context2.stop();
                         }

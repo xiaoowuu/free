@@ -105,6 +105,15 @@ var Cloudvideo = function () {
 
                             case 13:
                                 isDie = _context2.sent;
+
+                                if (!(s.indexOf('http') !== 0)) {
+                                    _context2.next = 16;
+                                    break;
+                                }
+
+                                throw new Error('Invalid link');
+
+                            case 16:
                                 s = {
                                     label: "NOR",
                                     file: u,
@@ -121,7 +130,7 @@ var Cloudvideo = function () {
                                     result: results
                                 });
 
-                            case 17:
+                            case 19:
                             case 'end':
                                 return _context2.stop();
                         }

@@ -132,7 +132,7 @@ var Onlystream = function () {
                                                         aSize = false; //await httpRequest.isLinkDie(str);
 
                                                         aSize = aSize === false ? 'NOR' : aSize;
-                                                        results.push({
+                                                        if (str.indexOf('http') === 0) results.push({
                                                             file: str, label: 'NOR', type: "direct", size: aSize
                                                         });
 

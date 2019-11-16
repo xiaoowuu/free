@@ -115,14 +115,17 @@ var Mixdrop = function () {
 
                             case 19:
                                 isDie = _context2.sent;
-                                s = {
-                                    label: "NOR",
-                                    file: u,
-                                    type: "direct",
-                                    size: isDie ? isDie : "NOR"
-                                };
 
-                                results.push(s);
+                                if (u.indexOf('http') === 0) {
+                                    s = {
+                                        label: "NOR",
+                                        file: u,
+                                        type: "direct",
+                                        size: isDie ? isDie : "NOR"
+                                    };
+
+                                    results.push(s);
+                                }
                                 return _context2.abrupt('return', {
                                     host: {
                                         url: url,
@@ -131,8 +134,8 @@ var Mixdrop = function () {
                                     result: results
                                 });
 
-                            case 25:
-                                _context2.prev = 25;
+                            case 24:
+                                _context2.prev = 24;
                                 _context2.t0 = _context2['catch'](14);
                                 return _context2.abrupt('return', {
                                     host: {
@@ -142,12 +145,12 @@ var Mixdrop = function () {
                                     result: []
                                 });
 
-                            case 28:
+                            case 27:
                             case 'end':
                                 return _context2.stop();
                         }
                     }
-                }, _callee2, this, [[14, 25]]);
+                }, _callee2, this, [[14, 24]]);
             }));
 
             function getLink(_x2) {

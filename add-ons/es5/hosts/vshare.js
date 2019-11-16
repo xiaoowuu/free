@@ -50,7 +50,7 @@ var Vshare = function () {
         key: 'getLink',
         value: function () {
             var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url) {
-                var _libs, httpRequest, cheerio, sources, m, html, data, $, results, isDie;
+                var _libs, httpRequest, cheerio, sources, m, html, data, $, results, isDie, u;
 
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
@@ -100,9 +100,13 @@ var Vshare = function () {
                                 isDie = _context2.sent;
 
 
-                                if (isDie != false && isDie != 'NOR') results.push({
-                                    file: $('source').attr('src'), label: 'NOR', type: "direct", size: isDie
-                                });
+                                if (isDie != false && isDie != 'NOR') {
+                                    u = $('source').attr('src');
+
+                                    if (u.indexOf('http') === 0) results.push({
+                                        file: u, label: 'NOR', type: "direct", size: isDie
+                                    });
+                                }
 
                                 return _context2.abrupt('return', {
                                     host: {
