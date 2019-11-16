@@ -110,10 +110,19 @@ var ClipWatching = function () {
                                 */
 
                                 m = html.match(/src: "([^"]+)/);
-                                _context2.next = 11;
-                                return httpRequest.isLinkDie(m[1]);
+
+                                if (!(m[1].indexOf('http') !== 0)) {
+                                    _context2.next = 11;
+                                    break;
+                                }
+
+                                throw new Error('invalid');
 
                             case 11:
+                                _context2.next = 13;
+                                return httpRequest.isLinkDie(m[1]);
+
+                            case 13:
                                 size = _context2.sent;
 
                                 results.push({
@@ -128,7 +137,7 @@ var ClipWatching = function () {
                                     result: results
                                 });
 
-                            case 14:
+                            case 16:
                             case 'end':
                                 return _context2.stop();
                         }

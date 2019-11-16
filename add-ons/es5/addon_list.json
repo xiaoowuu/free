@@ -835,7 +835,7 @@
             "domain": [
                 "clipwatching.com"
             ],
-            "version": "0.0.12",
+            "version": "0.0.13",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/clipwatching.js"
         },
         "verystream": {
