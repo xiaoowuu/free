@@ -226,7 +226,7 @@
         "tdn": {
             "name": "tdn",
             "domain": "tdn.dis",
-            "version": "0.4.12",
+            "version": "0.4.13",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/tdn.js",
             "type": [
                 "tv",
