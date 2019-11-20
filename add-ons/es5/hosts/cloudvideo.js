@@ -68,7 +68,7 @@ var Cloudvideo = function () {
         key: 'getLink',
         value: function () {
             var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url) {
-                var _libs, httpRequest, cheerio, results, html, $, u, isDie, s;
+                var _libs, httpRequest, cheerio, results, html, m, op, id, fname, hash, posts, $, u, isDie, s;
 
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
@@ -98,22 +98,47 @@ var Cloudvideo = function () {
                                 throw new Error("LINK DIE");
 
                             case 9:
-                                $ = cheerio.load(html);
+                                m = html.match(/name="op" value="([^"]+)/);
+                                op = m[1];
+
+                                m = html.match(/name="id" value="([^"]+)/);
+                                id = m[1];
+
+                                m = html.match(/name="fname" value="([^"]+)/);
+                                fname = m[1];
+
+                                m = html.match(/name="hash" value="([^"]+)/);
+                                hash = m[1];
+                                posts = {
+                                    op: 'download1',
+                                    usr_login: '',
+                                    id: id,
+                                    fname: fname,
+                                    referer: '',
+                                    hash: hash,
+                                    imhuman: 'Proceed to video'
+                                };
+                                _context2.next = 20;
+                                return httpRequest.post(url, {}, posts);
+
+                            case 20:
+                                html = _context2.sent;
+                                $ = cheerio.load(html.data);
                                 u = $('source').attr('src');
-                                _context2.next = 13;
+                                _context2.next = 25;
                                 return httpRequest.isLinkDie(u);
 
-                            case 13:
+                            case 25:
                                 isDie = _context2.sent;
 
-                                if (!(s.indexOf('http') !== 0)) {
-                                    _context2.next = 16;
+                                if (!(u.indexOf('http') !== 0)) {
+                                    _context2.next = 28;
                                     break;
                                 }
 
                                 throw new Error('Invalid link');
 
-                            case 16:
+                            case 28:
                                 s = {
                                     label: "NOR",
                                     file: u,
@@ -130,7 +155,7 @@ var Cloudvideo = function () {
                                     result: results
                                 });
 
-                            case 19:
+                            case 31:
                             case 'end':
                                 return _context2.stop();
                         }

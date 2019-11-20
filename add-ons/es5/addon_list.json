@@ -908,7 +908,7 @@
             "domain": [
                 "cloudvideo.tv"
             ],
-            "version": "0.0.2",
+            "version": "0.0.3",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/cloudvideo.js"
         },
         "vidiatv": {
