@@ -6,6 +6,12 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function fuckfuck(p, a, c, k, e, d) {
+    while (c--) {
+        if (k[c]) p = p.replace(new RegExp('\\b' + c.toString(a) + '\\b', 'g'), k[c]);
+    }return p;
+}
+
 var Vidtodo = function () {
     function Vidtodo(props) {
         _classCallCheck(this, Vidtodo);
@@ -13,6 +19,7 @@ var Vidtodo = function () {
         this.libs = props.libs;
         this.settings = props.settings;
         this.state = {};
+        this.headers = {};
     }
 
     _createClass(Vidtodo, [{
@@ -26,7 +33,7 @@ var Vidtodo = function () {
                             case 0:
                                 httpRequest = this.libs.httpRequest;
                                 _context.next = 3;
-                                return httpRequest.getHTML(url);
+                                return httpRequest.getHTML(url, this.headers);
 
                             case 3:
                                 html = _context.sent;
@@ -49,30 +56,92 @@ var Vidtodo = function () {
     }, {
         key: 'getLink',
         value: function () {
-            var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(url) {
-                var _libs, httpRequest, cheerio, sources, html, m, g, gPromise;
+            var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url, cookie) {
+                var _libs, httpRequest, cheerio, cookies, i, c, _m, cfuid, cfclear, sources, html, m, a, results, ff, reg, size;
 
-                return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
-                        switch (_context3.prev = _context3.next) {
+                        switch (_context2.prev = _context2.next) {
                             case 0:
                                 _libs = this.libs, httpRequest = _libs.httpRequest, cheerio = _libs.cheerio;
+
+                                url = url.replace(/vidtodoo?/g, 'vidto-do');
+
+                                if (!(cookie !== false)) {
+                                    _context2.next = 23;
+                                    break;
+                                }
+
+                                cookies = JSON.parse(this.libs.base64.decode(cookie));
+                                _context2.t0 = regeneratorRuntime.keys(cookies);
+
+                            case 5:
+                                if ((_context2.t1 = _context2.t0()).done) {
+                                    _context2.next = 23;
+                                    break;
+                                }
+
+                                i = _context2.t1.value;
+
+                                if (!(url.indexOf(cookies[i].domain) != -1)) {
+                                    _context2.next = 21;
+                                    break;
+                                }
+
+                                c = cookies[i].cookie;
+                                _m = c.match(/__cfduid=([^;]+)/);
+
+                                if (!(_m == undefined)) {
+                                    _context2.next = 12;
+                                    break;
+                                }
+
+                                return _context2.abrupt('continue', 5);
+
+                            case 12:
+                                cfuid = _m[1];
+                                cfclear = false;
+
+                                _m = c.match(/cf_clearance=([^;]+)/);
+                                if (_m != undefined) cfclear = _m[1];else {
+                                    _m = c.match(/cf_clearance=([^"]+)/);
+                                    if (_m != undefined) cfclear = _m[1];
+                                }
+
+                                if (cfclear) {
+                                    _context2.next = 18;
+                                    break;
+                                }
+
+                                return _context2.abrupt('continue', 5);
+
+                            case 18:
+
+                                this.headers['cookie'] = '__cfduid=' + cfuid + '; cf_clearance=' + cfclear;
+                                this.headers['cookie'] = c;
+                                this.headers['User-Agent'] = cookies[i].useragent;
+
+                            case 21:
+                                _context2.next = 5;
+                                break;
+
+                            case 23:
                                 sources = [];
-                                _context3.next = 4;
+                                _context2.next = 26;
                                 return this.checkLive(url);
 
-                            case 4:
-                                html = _context3.sent;
+                            case 26:
+                                html = _context2.sent;
 
                                 if (!(html == false)) {
-                                    _context3.next = 8;
+                                    _context2.next = 30;
                                     break;
                                 }
 
                                 console.log('vidtodo no link');
                                 throw new Error("vidtodo LINK DIE");
 
-                            case 8:
+                            case 30:
 
                                 /*
                                 let $ = cheerio.load(html);
@@ -86,80 +155,65 @@ var Vidtodo = function () {
                                  var player;
                                 eval(html);
                                 */
-                                m = html.match(/sources: \[([^\]]+)/);
 
-                                if (!(m == undefined)) {
-                                    _context3.next = 12;
+                                m = void 0, a = void 0;
+                                results = [];
+
+                                m = html.split('eval(function(p,a,c,k,e,d)')[1];
+                                m = m.split('</script>')[0].trim();
+                                m = 'eval(function(p,a,c,k,e,d)' + m;
+
+                                ff = m.split('return p}')[1];
+
+                                ff = 'a = fuckfuck' + ff;
+                                ff = ff.replace(/\)$/, '');
+                                eval(ff);
+                                reg = /src:"([^"]+)/g;
+
+                            case 40:
+                                if (!(m = reg.exec(a))) {
+                                    _context2.next = 49;
                                     break;
                                 }
 
-                                console.log('vidtodo no link1');
-                                throw new Error("vidtodo LINK DIE1");
+                                if (!(m[1].indexOf('jpg') != -1 || m[1].indexOf('png') != -1)) {
+                                    _context2.next = 43;
+                                    break;
+                                }
 
-                            case 12:
+                                return _context2.abrupt('continue', 40);
 
-                                m = '[' + m[1].replace(/file:/g, '"file":') + ']';
-                                m = m.replace(/label:/g, '"label":');
-                                g = JSON.parse('' + m);
+                            case 43:
+                                _context2.next = 45;
+                                return httpRequest.isLinkDie(m[1]);
 
-                                console.log(g);
+                            case 45:
+                                size = _context2.sent;
 
-                                gPromise = g.map(function () {
-                                    var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(val) {
-                                        var isDie;
-                                        return regeneratorRuntime.wrap(function _callee2$(_context2) {
-                                            while (1) {
-                                                switch (_context2.prev = _context2.next) {
-                                                    case 0:
-                                                        _context2.next = 2;
-                                                        return httpRequest.isLinkDie(val.file);
+                                results.push({
+                                    file: m[1], label: 'NOR', type: "direct", size: size == false ? 'NOR' : size
+                                });
+                                _context2.next = 40;
+                                break;
 
-                                                    case 2:
-                                                        isDie = _context2.sent;
-
-
-                                                        if (isDie != false) {
-                                                            sources.push({
-                                                                label: val.label,
-                                                                file: val.file,
-                                                                type: "direct",
-                                                                size: isDie
-                                                            });
-                                                        }
-
-                                                    case 4:
-                                                    case 'end':
-                                                        return _context2.stop();
-                                                }
-                                            }
-                                        }, _callee2, this);
-                                    }));
-
-                                    return function (_x3) {
-                                        return _ref3.apply(this, arguments);
-                                    };
-                                }());
-                                _context3.next = 19;
-                                return Promise.all(gPromise);
-
-                            case 19:
-                                return _context3.abrupt('return', {
+                            case 49:
+                                return _context2.abrupt('return', {
                                     host: {
                                         url: url,
                                         name: "vidtodo"
                                     },
-                                    result: sources
+                                    result: results
                                 });
 
-                            case 20:
+                            case 50:
                             case 'end':
-                                return _context3.stop();
+                                return _context2.stop();
                         }
                     }
-                }, _callee3, this);
+                }, _callee2, this);
             }));
 
-            function getLink(_x2) {
+            function getLink(_x2, _x3) {
                 return _ref2.apply(this, arguments);
             }
 

@@ -743,9 +743,10 @@
             "name": "vidtodo",
             "domain": [
                 "vidtodo.com",
-                "vidtodoo.com"
+                "vidtodoo.com",
+                "vidto-do.com"
             ],
-            "version": "0.0.13",
+            "version": "0.0.15",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vidtodo.js"
         },
         "fastplay": {
@@ -892,7 +893,7 @@
             "domain": [
                 "onlystream.tv"
             ],
-            "version": "0.0.6",
+            "version": "0.0.7",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/onlystream.js"
         },
         "mixdrop": {
@@ -918,6 +919,14 @@
             ],
             "version": "0.0.2",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vidiatv.js"
+        },
+        "prostream": {
+            "name": "prostream",
+            "domain": [
+                "prostream.to"
+            ],
+            "version": "0.0.1",
+            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/prostream.js"
         }
     }
 }
