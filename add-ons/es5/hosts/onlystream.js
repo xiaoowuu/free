@@ -13,7 +13,7 @@ var Onlystream = function () {
         this.libs = props.libs;
         this.settings = props.settings;
         this.state = {};
-        this.headers = {};
+        this.headers = { 'User-Agent': 'Firefox 69 dm onlystream' };
     }
 
     _createClass(Onlystream, [{

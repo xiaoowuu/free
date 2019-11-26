@@ -893,7 +893,7 @@
             "domain": [
                 "onlystream.tv"
             ],
-            "version": "0.0.7",
+            "version": "0.0.8",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/onlystream.js"
         },
         "mixdrop": {
