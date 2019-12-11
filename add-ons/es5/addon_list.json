@@ -453,6 +453,16 @@
             "type": [
                 "tv"
             ]
+        },
+        "pirates": {
+            "name": "pirates",
+            "domain": "pirates.dis",
+            "version": "0.0.1",
+            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/pirates.js",
+            "type": [
+                "tv",
+                "movie"
+            ]
         }
     },
     "hosts": {
