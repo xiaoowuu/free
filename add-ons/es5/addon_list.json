@@ -91,7 +91,7 @@
         "thanqn": {
             "name": "thanqn",
             "domain": "thanqn.dis",
-            "version": "0.3.20",
+            "version": "0.3.21",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/thanqn.js",
             "type": [
                 "movie",
@@ -101,7 +101,7 @@
         "hdtop": {
             "name": "hdtop",
             "domain": "hdtop.dis",
-            "version": "0.0.11",
+            "version": "0.0.12",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/hdtop.js",
             "type": [
                 "movie",
@@ -111,7 +111,7 @@
         "hdtopweb": {
             "name": "hdtopweb",
             "domain": "hdtopweb.dis",
-            "version": "0.0.11",
+            "version": "0.0.12",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/hdtopweb.js",
             "type": [
                 "movie",
