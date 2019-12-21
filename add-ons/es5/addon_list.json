@@ -23,7 +23,7 @@
         "m4u": {
             "name": "m4u",
             "domain": "m4u.fun",
-            "version": "0.1.12",
+            "version": "0.1.13",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/m4u.js",
             "type": [
                 "movie",
