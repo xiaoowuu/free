@@ -691,6 +691,7 @@
         "direct": {
             "name": "direct",
             "domain": [
+                "mellimovies.com",
                 "unlimited4.me",
                 "filmha.co",
                 "heyserver.in",
@@ -729,7 +730,7 @@
                 "upfdl.com",
                 "saberfun.name"
             ],
-            "version": "0.1.12",
+            "version": "0.1.13",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/direct.js"
         },
         "uptostream": {
