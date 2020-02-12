@@ -91,7 +91,7 @@
         "thanqn": {
             "name": "thanqn",
             "domain": "thanqn.dis",
-            "version": "0.3.22",
+            "version": "0.3.23",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/thanqn.js",
             "type": [
                 "movie",
@@ -101,7 +101,7 @@
         "hdtop": {
             "name": "hdtop",
             "domain": "hdtop.dis",
-            "version": "0.0.12",
+            "version": "0.0.13",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/hdtop.js",
             "type": [
                 "movie",
@@ -111,7 +111,7 @@
         "hdtopweb": {
             "name": "hdtopweb",
             "domain": "hdtopweb.dis",
-            "version": "0.0.12",
+            "version": "0.0.13",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/hdtopweb.js",
             "type": [
                 "movie",
@@ -180,7 +180,7 @@
         "afdah": {
             "name": "afdah",
             "domain": "afdah.dis",
-            "version": "0.7.19",
+            "version": "0.7.20",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/afdah.js",
             "type": [
                 "movie",
@@ -747,7 +747,7 @@
             "domain": [
                 "afdah.info"
             ],
-            "version": "0.9.23",
+            "version": "0.9.24",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/afdah.js"
         },
         "vidtodo": {
