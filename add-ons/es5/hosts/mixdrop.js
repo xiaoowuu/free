@@ -35,7 +35,7 @@ var Mixdrop = function () {
                                 httpRequest = this.libs.httpRequest;
                                 _context.prev = 3;
                                 _context.next = 6;
-                                return httpRequest.getHTML(url);
+                                return httpRequest.getHTML(url, { 'User-Agent': 'Firefox 69' });
 
                             case 6:
                                 html = _context.sent;
@@ -68,7 +68,7 @@ var Mixdrop = function () {
         key: 'getLink',
         value: function () {
             var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url) {
-                var _libs, httpRequest, cheerio, results, html, m, MDCore, u, isDie, s;
+                var _libs, httpRequest, cheerio, results, html;
 
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
@@ -101,42 +101,14 @@ var Mixdrop = function () {
                                 throw new Error("LINK DIE");
 
                             case 10:
-                                m = html.split('eval(')[1];
-
-                                m = m.split('</script>')[0];
-                                m = 'eval(' + m;
-                                MDCore = {};
-                                _context2.prev = 14;
-
-                                eval(m);
-                                u = MDCore.vsrc.indexOf('http') == -1 ? 'https:' + MDCore.vsrc : MDCore.vsrc;
-                                _context2.next = 19;
-                                return httpRequest.isLinkDie(u);
-
-                            case 19:
-                                isDie = _context2.sent;
-
-                                if (u.indexOf('http') === 0) {
-                                    s = {
-                                        label: "NOR",
-                                        file: u,
-                                        type: "direct",
-                                        size: isDie ? isDie : "NOR"
-                                    };
-
-                                    results.push(s);
+                                if (!(html.toLowerCase().indexOf("we can't find the video you are looking for.") != -1)) {
+                                    _context2.next = 12;
+                                    break;
                                 }
-                                return _context2.abrupt('return', {
-                                    host: {
-                                        url: url,
-                                        name: "Mixdrop"
-                                    },
-                                    result: results
-                                });
 
-                            case 24:
-                                _context2.prev = 24;
-                                _context2.t0 = _context2['catch'](14);
+                                throw new Error('DIE link');
+
+                            case 12:
                                 return _context2.abrupt('return', {
                                     host: {
                                         url: url,
@@ -145,12 +117,12 @@ var Mixdrop = function () {
                                     result: []
                                 });
 
-                            case 27:
+                            case 13:
                             case 'end':
                                 return _context2.stop();
                         }
                     }
-                }, _callee2, this, [[14, 24]]);
+                }, _callee2, this);
             }));
 
             function getLink(_x2) {

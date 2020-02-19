@@ -79,15 +79,6 @@
                 "tv"
             ]
         },
-        "watchseries": {
-            "name": "watchseries",
-            "domain": "watchseries.sk",
-            "version": "0.4.15",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/watchseries.js",
-            "type": [
-                "tv"
-            ]
-        },
         "thanqn": {
             "name": "thanqn",
             "domain": "thanqn.dis",
@@ -138,26 +129,6 @@
                 "tv"
             ]
         },
-        "wrzcraft": {
-            "name": "wrzcraft",
-            "domain": "wrzcraft.dis",
-            "version": "0.0.12",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/wrzcraft.js",
-            "type": [
-                "movie",
-                "tv"
-            ]
-        },
-        "scnsrc": {
-            "name": "scnsrc",
-            "domain": "scnsrc.dis",
-            "version": "0.1.5",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/scnsrc.js",
-            "type": [
-                "movie",
-                "tv"
-            ]
-        },
         "thanrd": {
             "name": "thanrd",
             "domain": "thanrd.dis",
@@ -168,15 +139,6 @@
                 "tv"
             ]
         },
-        "flixanity": {
-            "name": "flixanity",
-            "domain": "flixanity.io",
-            "version": "1.7.17",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/flixanity.js",
-            "type": [
-                "movie"
-            ]
-        },
         "afdah": {
             "name": "afdah",
             "domain": "afdah.dis",
@@ -185,52 +147,6 @@
             "type": [
                 "movie",
                 "tv"
-            ]
-        },
-        "yitivi": {
-            "name": "yitivi",
-            "domain": "yitivi.dis",
-            "version": "0.0.15",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/yifytv.js",
-            "type": [
-                "movie"
-            ]
-        },
-        "davich": {
-            "name": "davich",
-            "domain": "davich.dis",
-            "version": "0.0.16",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/davix.js",
-            "type": [
-                "movie"
-            ]
-        },
-        "animevlf": {
-            "name": "animevlf",
-            "domain": "animevlf.dis",
-            "version": "0.0.13",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/animeflv.js",
-            "type": [
-                "tv"
-            ]
-        },
-        "gogoanimes": {
-            "name": "gogoanimes",
-            "domain": "gogoanimes.dis",
-            "version": "0.0.13",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/gogoanimes.js",
-            "type": [
-                "tv"
-            ]
-        },
-        "tdn": {
-            "name": "tdn",
-            "domain": "tdn.dis",
-            "version": "0.4.13",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/tdn.js",
-            "type": [
-                "tv",
-                "movie"
             ]
         },
         "123moviesfree": {
@@ -270,16 +186,6 @@
                 "movie"
             ]
         },
-        "twodllnet": {
-            "name": "twodllnet",
-            "domain": "twodllnet.dis",
-            "version": "0.0.15",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/rd.twodllnet.js",
-            "type": [
-                "movie",
-                "tv"
-            ]
-        },
         "123moviesag": {
             "name": "123moviesag",
             "domain": "123moviesag.dis",
@@ -300,15 +206,6 @@
                 "tv"
             ]
         },
-        "salamdl": {
-            "name": "salamdl",
-            "domain": "salamdl.dis",
-            "version": "0.0.13",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/salamdl.js",
-            "type": [
-                "movie"
-            ]
-        },
         "f2movies": {
             "name": "f2movies",
             "domain": "f2movies.dis",
@@ -317,25 +214,6 @@
             "type": [
                 "movie",
                 "tv"
-            ]
-        },
-        "icefilms": {
-            "name": "icefilms",
-            "domain": "icefilms.dis",
-            "version": "0.0.17",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/icefilms.js",
-            "type": [
-                "movie",
-                "tv"
-            ]
-        },
-        "tv21": {
-            "name": "tv21",
-            "domain": "tv21.dis",
-            "version": "0.0.12",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/tv21.js",
-            "type": [
-                "movie"
             ]
         },
         "hdmo": {
@@ -348,31 +226,11 @@
                 "tv"
             ]
         },
-        "fmoviescab": {
-            "name": "fmoviescab",
-            "domain": "fmoviescab.dis",
-            "version": "0.0.10",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/fmoviescab.js",
-            "type": [
-                "movie",
-                "tv"
-            ]
-        },
         "projectflv": {
             "name": "projectflv",
             "domain": "projectflv.dis",
             "version": "0.0.7",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/projectflv.js",
-            "type": [
-                "movie",
-                "tv"
-            ]
-        },
-        "123netflix": {
-            "name": "123netflix",
-            "domain": "123netflix.dis",
-            "version": "0.0.7",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/123netflix.js",
             "type": [
                 "movie",
                 "tv"
@@ -397,25 +255,6 @@
                 "tv"
             ]
         },
-        "vizer": {
-            "name": "vizer",
-            "domain": "vizer.dis",
-            "version": "0.0.8",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/vizer.js",
-            "type": [
-                "movie",
-                "tv"
-            ]
-        },
-        "moviesmax": {
-            "name": "moviesmax",
-            "domain": "moviesmax.dis",
-            "version": "0.0.2",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/moviesmax.js",
-            "type": [
-                "movie"
-            ]
-        },
         "yomoviesit": {
             "name": "yomoviesit",
             "domain": "yomoviesit.dis",
@@ -425,99 +264,14 @@
                 "movie",
                 "tv"
             ]
-        },
-        "movies123pro": {
-            "name": "movies123pro",
-            "domain": "movies123pro.dis",
-            "version": "0.0.3",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/movies123pro.js",
-            "type": [
-                "movie",
-                "tv"
-            ]
-        },
-        "solarmoviehd": {
-            "name": "solarmoviehd",
-            "domain": "solarmoviehd.dis",
-            "version": "0.0.2",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/solarmoviehd.js",
-            "type": [
-                "movie"
-            ]
-        },
-        "watchseriesto": {
-            "name": "watchseriesto",
-            "domain": "watchseriesto.dis",
-            "version": "0.0.1",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/watchseriesto.js",
-            "type": [
-                "tv"
-            ]
-        },
-        "pirates": {
-            "name": "pirates",
-            "domain": "pirates.dis",
-            "version": "0.0.1",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/pirates.js",
-            "type": [
-                "tv",
-                "movie"
-            ]
         }
     },
     "hosts": {
-        "rapidvideo": {
-            "name": "rapidvideo",
-            "domain": [
-                "rapidvideo.com",
-                "rapidvid.to"
-            ],
-            "version": "0.1.23",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/rapidvideo.js"
-        },
         "tocloud": {
             "name": "tocloud",
             "domain": "tocloud.co",
             "version": "0.0.20",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/tocloud.js"
-        },
-        "uploadhaven": {
-            "name": "uploadhaven",
-            "domain": [
-                "uploadhaven.com"
-            ],
-            "version": "0.0.12",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/uploadhaven.js"
-        },
-        "consistent": {
-            "name": "consistent",
-            "domain": [
-                "consistent.stream"
-            ],
-            "version": "0.0.13",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/consistent.js"
-        },
-        "streamango": {
-            "name": "streamango",
-            "domain": "streamango.com",
-            "version": "0.1.11",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/streamango.js"
-        },
-        "openload": {
-            "name": "openload",
-            "domain": [
-                "openload.com",
-                "openload.co",
-                "openload.pw",
-                "oload.tv",
-                "oload.stream",
-                "oload.info",
-                "oload.site",
-                "oload.win"
-            ],
-            "version": "0.2.21",
-            "author": "psyntium",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/openload.js"
         },
         "putload": {
             "name": "putload",
@@ -526,48 +280,6 @@
             ],
             "version": "0.0.16",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/putload.js"
-        },
-        "teamdk": {
-            "name": "teamdk",
-            "domain": [
-                "teamdk.net"
-            ],
-            "version": "0.0.14",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/teamdk.js"
-        },
-        "estream": {
-            "name": "estream",
-            "domain": [
-                "estreamdisable.to"
-            ],
-            "version": "0.0.15",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/estream.js"
-        },
-        "thevideo": {
-            "name": "thevideo",
-            "domain": [
-                "thevideo.me",
-                "tvad.me",
-                "thevideo.website"
-            ],
-            "version": "0.0.16",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/thevideo.js"
-        },
-        "vidstreaming": {
-            "name": "vidstreaming",
-            "domain": [
-                "vidstreaming.io"
-            ],
-            "version": "0.0.13",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vidstreaming.js"
-        },
-        "vidushare": {
-            "name": "vidushare",
-            "domain": [
-                "vidushare.com"
-            ],
-            "version": "0.0.13",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vidushare.js"
         },
         "okru": {
             "name": "okru",
@@ -593,14 +305,6 @@
             "version": "0.0.16",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vidcdn.js"
         },
-        "m4ukido": {
-            "name": "m4ukido",
-            "domain": [
-                "m4ukido.com"
-            ],
-            "version": "0.0.13",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/m4ukido.js"
-        },
         "googleusercontent": {
             "name": "googleusercontent",
             "domain": [
@@ -609,33 +313,6 @@
             ],
             "version": "0.0.15",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/googleusercontent.js"
-        },
-        "212.47.226.206": {
-            "name": "212.47.226.206",
-            "domain": [
-                "212.47.226.206"
-            ],
-            "version": "0.0.12",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/212.47.226.206.js"
-        },
-        "212.47.234.139": {
-            "name": "212.47.234.139",
-            "domain": [
-                "212.47.234.139"
-            ],
-            "version": "0.0.12",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/212.47.234.139.js"
-        },
-        "fbcdn": {
-            "name": "fbcdn",
-            "domain": [
-                "video.xx.fbcdn.net",
-                "scontent.xx.fbcdn.net",
-                "fbcdn.net",
-                "instagram.com"
-            ],
-            "version": "0.6.20",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/video.xx.fbcdn.js"
         },
         "googlevideo": {
             "name": "googlevideo",
@@ -671,14 +348,6 @@
             ],
             "version": "0.0.12",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/realdebit.js"
-        },
-        "hdpopcornscosv": {
-            "name": "hdpopcornscosv",
-            "domain": [
-                "85.93.91.137"
-            ],
-            "version": "0.0.12",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/hdpopcornscosv.js"
         },
         "GoogleDrive": {
             "name": "GoogleDrive",
@@ -760,22 +429,6 @@
             "version": "0.0.15",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vidtodo.js"
         },
-        "fastplay": {
-            "name": "fastplay",
-            "domain": [
-                "fastplay.to"
-            ],
-            "version": "0.0.12",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/fastplay.js"
-        },
-        "vcdn": {
-            "name": "vcdn",
-            "domain": [
-                "vcdn.io"
-            ],
-            "version": "0.0.12",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vcdn.js"
-        },
         "vidcloud": {
             "name": "vidcloud",
             "domain": [
@@ -784,14 +437,6 @@
             "version": "0.0.14",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vidcloud.js"
         },
-        "vevio": {
-            "name": "vevio",
-            "domain": [
-                "vev.io"
-            ],
-            "version": "0.0.12",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vevio.js"
-        },
         "gounlimited": {
             "name": "gounlimited",
             "domain": [
@@ -799,23 +444,6 @@
             ],
             "version": "0.0.20",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/gounlimited.js"
-        },
-        "viduplayer": {
-            "name": "viduplayer",
-            "domain": [
-                "viduplayer.com",
-                "openstream.io"
-            ],
-            "version": "0.0.12",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/viduplayer.js"
-        },
-        "vidup": {
-            "name": "vidup",
-            "domain": [
-                "vidup.io"
-            ],
-            "version": "0.0.12",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vidup.js"
         },
         "megaxfer": {
             "name": "megaxfer",
@@ -850,31 +478,6 @@
             "version": "0.0.13",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/clipwatching.js"
         },
-        "verystream": {
-            "name": "verystream",
-            "domain": [
-                "verystream.com",
-                "woof.tube"
-            ],
-            "version": "0.0.7",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/verystream.js"
-        },
-        "xstreamcdn": {
-            "name": "xstreamcdn",
-            "domain": [
-                "xstreamcdn.com"
-            ],
-            "version": "0.0.9",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/xstreamcdn.js"
-        },
-        "hls": {
-            "name": "hls",
-            "domain": [
-                "loadshare.org"
-            ],
-            "version": "0.0.7",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/hls.js"
-        },
         "vshare": {
             "name": "vshare",
             "domain": [
@@ -883,36 +486,12 @@
             "version": "0.0.8",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vshare.js"
         },
-        "jetload": {
-            "name": "jetload",
-            "domain": [
-                "jetload.net"
-            ],
-            "version": "0.0.3",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/jetload.js"
-        },
-        "playeernet": {
-            "name": "playeernet",
-            "domain": [
-                "playeer.net"
-            ],
-            "version": "0.0.3",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/playeernet.js"
-        },
-        "onlystream": {
-            "name": "onlystream",
-            "domain": [
-                "onlystream.tv"
-            ],
-            "version": "0.0.8",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/onlystream.js"
-        },
         "mixdrop": {
             "name": "mixdrop",
             "domain": [
                 "mixdrop.co"
             ],
-            "version": "0.0.2",
+            "version": "0.0.3",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/mixdrop.js"
         },
         "cloudvideo": {
