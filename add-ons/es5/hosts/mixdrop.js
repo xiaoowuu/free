@@ -35,7 +35,7 @@ var Mixdrop = function () {
                                 httpRequest = this.libs.httpRequest;
                                 _context.prev = 3;
                                 _context.next = 6;
-                                return httpRequest.getHTML(url, { 'User-Agent': 'Firefox 69' });
+                                return httpRequest.getHTML(url, { 'User-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/79.0. 3945.79 Chrome/79.0.3945.79 Safari/537.36' });
 
                             case 6:
                                 html = _context.sent;
@@ -83,7 +83,7 @@ var Mixdrop = function () {
 
                             case 2:
 
-                                url = url.replace('/f/', '/e/');
+                                url = url.replace('/f/', '/e/').replace('.to', '.co');
 
                                 _libs = this.libs, httpRequest = _libs.httpRequest, cheerio = _libs.cheerio;
                                 results = [];

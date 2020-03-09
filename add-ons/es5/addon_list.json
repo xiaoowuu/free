@@ -23,7 +23,7 @@
         "m4u": {
             "name": "m4u",
             "domain": "m4u.fun",
-            "version": "0.1.13",
+            "version": "0.1.15",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/m4u.js",
             "type": [
                 "movie",
@@ -162,7 +162,7 @@
         "projectfreetv": {
             "name": "projectfreetv",
             "domain": "projectfreetv.dis",
-            "version": "0.1.18",
+            "version": "0.1.19",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/projectfreetv.js",
             "type": [
                 "tv"
@@ -334,9 +334,10 @@
         "vidoza": {
             "name": "vidoza",
             "domain": [
-                "vidoza.net"
+                "vidoza.net",
+                "vidoza.org"
             ],
-            "version": "1.0.16",
+            "version": "1.0.17",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vidoza.js"
         },
         "realdebit": {
@@ -489,9 +490,10 @@
         "mixdrop": {
             "name": "mixdrop",
             "domain": [
-                "mixdrop.co"
+                "mixdrop.co",
+                "mixdrop.to"
             ],
-            "version": "0.0.3",
+            "version": "0.0.4",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/mixdrop.js"
         },
         "cloudvideo": {
