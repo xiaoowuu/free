@@ -337,7 +337,7 @@
                 "vidoza.net",
                 "vidoza.org"
             ],
-            "version": "1.0.17",
+            "version": "1.0.18",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vidoza.js"
         },
         "realdebit": {
@@ -425,9 +425,10 @@
             "domain": [
                 "vidtodo.com",
                 "vidtodoo.com",
-                "vidto-do.com"
+                "vidto-do.com",
+                "allvids.co"
             ],
-            "version": "0.0.15",
+            "version": "0.0.16",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vidtodo.js"
         },
         "vidcloud": {

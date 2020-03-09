@@ -43,19 +43,30 @@ var Vidoza = function () {
                                 // you fill the die status text
                                 // const dieStatusText = "";
 
-                                _context.next = 3;
-                                return httpRequest.getHTML(url);
-
-                            case 3:
-                                html = _context.sent;
-                                return _context.abrupt('return', html);
+                                console.log('vidozaaaaa', url);
+                                _context.prev = 2;
+                                _context.next = 5;
+                                return httpRequest.getHTML(url, { 'User-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/79.0. 3945.79 Chrome/79.0.3945.79 Safari/537.36' });
 
                             case 5:
+                                html = _context.sent;
+
+                                console.log('vidozaaaaa done', url);
+                                // if(html.includes(dieStatusText)) return true;
+                                return _context.abrupt('return', html);
+
+                            case 10:
+                                _context.prev = 10;
+                                _context.t0 = _context['catch'](2);
+
+                                console.log('vidozaaaa err', _context.t0);
+
+                            case 13:
                             case 'end':
                                 return _context.stop();
                         }
                     }
-                }, _callee, this);
+                }, _callee, this, [[2, 10]]);
             }));
 
             function checkLive(_x) {

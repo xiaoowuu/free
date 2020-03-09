@@ -65,7 +65,7 @@ var Vidtodo = function () {
                             case 0:
                                 _libs = this.libs, httpRequest = _libs.httpRequest, cheerio = _libs.cheerio;
 
-                                url = url.replace(/vidtodoo?/g, 'vidto-do');
+                                url = url.replace(/\/([^\/]+)/, '/allvids.co');
 
                                 if (!(cookie !== false)) {
                                     _context2.next = 23;
