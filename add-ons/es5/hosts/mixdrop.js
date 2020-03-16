@@ -35,27 +35,29 @@ var Mixdrop = function () {
                                 httpRequest = this.libs.httpRequest;
                                 _context.prev = 3;
                                 _context.next = 6;
-                                return httpRequest.getHTML(url, { 'User-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/79.0. 3945.79 Chrome/79.0.3945.79 Safari/537.36' });
+                                return httpRequest.getHTML(url, { 'User-agent': 'Mozilla/5.0 (X1' + Math.random() + '; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/79.' + Math.random() + '. 3945.79 Chrome/79.0.3945.79 Safari/537.36' });
 
                             case 6:
                                 html = _context.sent;
-                                _context.next = 12;
+
+                                console.log({ 'User-agent': 'Mozilla/5.0 (X1' + Math.random() + '; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/79.' + Math.random() + '. 3945.79 Chrome/79.0.3945.79 Safari/537.36' });
+                                _context.next = 13;
                                 break;
 
-                            case 9:
-                                _context.prev = 9;
+                            case 10:
+                                _context.prev = 10;
                                 _context.t0 = _context['catch'](3);
                                 throw new Error('NOT_FOUND');
 
-                            case 12:
+                            case 13:
                                 return _context.abrupt('return', html);
 
-                            case 13:
+                            case 14:
                             case 'end':
                                 return _context.stop();
                         }
                     }
-                }, _callee, this, [[3, 9]]);
+                }, _callee, this, [[3, 10]]);
             }));
 
             function checkLive(_x) {
