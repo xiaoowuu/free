@@ -19,7 +19,7 @@ var Mixdrop = function () {
         key: 'checkLive',
         value: function () {
             var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(url) {
-                var httpRequest, html;
+                var httpRequest, html, agents, agent;
                 return regeneratorRuntime.wrap(function _callee$(_context) {
                     while (1) {
                         switch (_context.prev = _context.next) {
@@ -35,27 +35,35 @@ var Mixdrop = function () {
                                 httpRequest = this.libs.httpRequest;
                                 _context.prev = 3;
                                 _context.next = 6;
-                                return httpRequest.getHTML(url, { 'User-agent': Math.random() + ' Firefox ' + Math.random() + ' 61.' + Math.random() });
+                                return httpRequest.getHTML('https://gist.githubusercontent.com/pzb/b4b6f57144aea7827ae4/raw/cf847b76a142955b1410c8bcef3aabe221a63db1/user-agents.txt');
 
                             case 6:
+                                agents = _context.sent;
+
+                                agents = agents.split("\n");
+                                agent = agents[Math.floor(Math.random() * agents.length)];
+                                _context.next = 11;
+                                return httpRequest.getHTML(url, { 'User-agent': agent });
+
+                            case 11:
                                 html = _context.sent;
-                                _context.next = 12;
+                                _context.next = 17;
                                 break;
 
-                            case 9:
-                                _context.prev = 9;
+                            case 14:
+                                _context.prev = 14;
                                 _context.t0 = _context['catch'](3);
                                 throw new Error('NOT_FOUND');
 
-                            case 12:
+                            case 17:
                                 return _context.abrupt('return', html);
 
-                            case 13:
+                            case 18:
                             case 'end':
                                 return _context.stop();
                         }
                     }
-                }, _callee, this, [[3, 9]]);
+                }, _callee, this, [[3, 14]]);
             }));
 
             function checkLive(_x) {
@@ -68,7 +76,7 @@ var Mixdrop = function () {
         key: 'getLink',
         value: function () {
             var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url) {
-                var _libs, httpRequest, cheerio, results, html;
+                var urlCheck, _libs, httpRequest, cheerio, results, html, m, size;
 
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
@@ -85,39 +93,53 @@ var Mixdrop = function () {
 
                                 url = url.replace('/f/', '/e/').replace('.to', '.co');
 
+                                urlCheck = url.replace('/e/', '/f/') + '?download';
                                 _libs = this.libs, httpRequest = _libs.httpRequest, cheerio = _libs.cheerio;
                                 results = [];
-                                _context2.next = 7;
-                                return this.checkLive(url);
+                                _context2.next = 8;
+                                return this.checkLive(urlCheck);
 
-                            case 7:
+                            case 8:
                                 html = _context2.sent;
 
                                 if (!(html == false)) {
-                                    _context2.next = 10;
+                                    _context2.next = 11;
                                     break;
                                 }
 
                                 throw new Error("LINK DIE");
 
-                            case 10:
+                            case 11:
                                 if (!(html.toLowerCase().indexOf("we can't find the video you are looking for.") != -1)) {
-                                    _context2.next = 12;
+                                    _context2.next = 13;
                                     break;
                                 }
 
                                 throw new Error('DIE link');
 
-                            case 12:
+                            case 13:
+                                //console.log('User-agent mixdropxxx nodie1');
+
+                                m = html.match(/\d+(\.\d+)?\s(GB?|MB?)/i);
+                                size = m != null ? m[0] : 0;
+
+
+                                if (size.toLowerCase().indexOf('mb') != -1) {
+                                    size = '0.' + size.replace(/\smb?/i, '').replace('.', '');
+                                }
+
+                                if (size !== 0) size = parseFloat(size.replace(/\sgb/i, '')).toFixed(2);
+
                                 return _context2.abrupt('return', {
                                     host: {
+                                        size: size,
                                         url: url,
                                         name: "Mixdrop"
                                     },
                                     result: []
                                 });
 
-                            case 13:
+                            case 18:
                             case 'end':
                                 return _context2.stop();
                         }

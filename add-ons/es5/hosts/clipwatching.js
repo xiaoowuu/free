@@ -25,20 +25,28 @@ var ClipWatching = function () {
         key: 'checkLive',
         value: function () {
             var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(url) {
-                var httpRequest, html;
+                var httpRequest, agents, agent, html;
                 return regeneratorRuntime.wrap(function _callee$(_context) {
                     while (1) {
                         switch (_context.prev = _context.next) {
                             case 0:
                                 httpRequest = this.libs.httpRequest;
                                 _context.next = 3;
-                                return httpRequest.getHTML(url);
+                                return httpRequest.getHTML('https://gist.githubusercontent.com/pzb/b4b6f57144aea7827ae4/raw/cf847b76a142955b1410c8bcef3aabe221a63db1/user-agents.txt');
 
                             case 3:
+                                agents = _context.sent;
+
+                                agents = agents.split("\n");
+                                agent = agents[Math.floor(Math.random() * agents.length)];
+                                _context.next = 8;
+                                return httpRequest.getHTML(url, { 'User-Agent': agent });
+
+                            case 8:
                                 html = _context.sent;
                                 return _context.abrupt('return', html);
 
-                            case 5:
+                            case 10:
                             case 'end':
                                 return _context.stop();
                         }

@@ -30,16 +30,6 @@
                 "tv"
             ]
         },
-        "playdk": {
-            "name": "playdk",
-            "domain": "playdk.net",
-            "version": "0.4.12",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/playdk.js",
-            "type": [
-                "movie",
-                "tv"
-            ]
-        },
         "putlockerhd": {
             "name": "putlockerhd",
             "domain": "putlockerhd.co",
@@ -53,7 +43,7 @@
         "series9": {
             "name": "series9",
             "domain": "series9.io",
-            "version": "0.4.17",
+            "version": "0.4.18",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/series9.js",
             "type": [
                 "tv",
@@ -177,15 +167,6 @@
                 "tv"
             ]
         },
-        "hdbest": {
-            "name": "hdbest",
-            "domain": "hdbest.dis",
-            "version": "0.0.16",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/hdbest.js",
-            "type": [
-                "movie"
-            ]
-        },
         "123moviesag": {
             "name": "123moviesag",
             "domain": "123moviesag.dis",
@@ -206,31 +187,11 @@
                 "tv"
             ]
         },
-        "f2movies": {
-            "name": "f2movies",
-            "domain": "f2movies.dis",
-            "version": "0.0.13",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/f2movies.js",
-            "type": [
-                "movie",
-                "tv"
-            ]
-        },
         "hdmo": {
             "name": "hdmo",
             "domain": "hdmo.dis",
             "version": "0.0.13",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/hdmo.js",
-            "type": [
-                "movie",
-                "tv"
-            ]
-        },
-        "projectflv": {
-            "name": "projectflv",
-            "domain": "projectflv.dis",
-            "version": "0.0.7",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/projectflv.js",
             "type": [
                 "movie",
                 "tv"
@@ -477,16 +438,8 @@
             "domain": [
                 "clipwatching.com"
             ],
-            "version": "0.0.13",
+            "version": "0.0.14",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/clipwatching.js"
-        },
-        "vshare": {
-            "name": "vshare",
-            "domain": [
-                "vshare.eu"
-            ],
-            "version": "0.0.8",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vshare.js"
         },
         "mixdrop": {
             "name": "mixdrop",
@@ -494,7 +447,7 @@
                 "mixdrop.co",
                 "mixdrop.to"
             ],
-            "version": "0.0.6",
+            "version": "0.0.7",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/mixdrop.js"
         },
         "cloudvideo": {
@@ -512,14 +465,6 @@
             ],
             "version": "0.0.2",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vidiatv.js"
-        },
-        "prostream": {
-            "name": "prostream",
-            "domain": [
-                "prostream.to"
-            ],
-            "version": "0.0.1",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/prostream.js"
         },
         "videobin": {
             "name": "videobin",
