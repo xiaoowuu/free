@@ -68,7 +68,7 @@ var Cloudvideo = function () {
         key: 'getLink',
         value: function () {
             var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url) {
-                var _libs, httpRequest, cheerio, results, html, m, op, id, fname, hash, posts, $, u, isDie, s;
+                var _libs, httpRequest, cheerio, results, html, m, op, id, fname, hash, posts, $, size, u, s;
 
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
@@ -124,26 +124,38 @@ var Cloudvideo = function () {
                             case 20:
                                 html = _context2.sent;
                                 $ = cheerio.load(html.data);
-                                u = $('source').attr('src');
-                                _context2.next = 25;
-                                return httpRequest.isLinkDie(u);
+                                size = 'NOR';
 
-                            case 25:
-                                isDie = _context2.sent;
+
+                                $('#download').each(function () {
+                                    var t = $(this).text();
+                                    if (t.toLowerCase().indexOf('normal quality') != -1) {
+                                        var _m = t.match(/\d+(\.\d+)?\s(GB?|MB?)/i);
+                                        size = _m != null ? _m[0] : 0;
+
+                                        if (size.toLowerCase().indexOf('mb') != -1) {
+                                            size = '0.' + size.replace(/\smb?/i, '').replace('.', '');
+                                        }
+
+                                        if (size !== 0) size = parseFloat(size.replace(/\sgb/i, '')).toFixed(2);
+                                    }
+                                });
+
+                                u = $('source').attr('src');
 
                                 if (!(u.indexOf('http') !== 0)) {
-                                    _context2.next = 28;
+                                    _context2.next = 27;
                                     break;
                                 }
 
                                 throw new Error('Invalid link');
 
-                            case 28:
+                            case 27:
                                 s = {
                                     label: "NOR",
                                     file: u,
                                     type: "direct",
-                                    size: isDie ? isDie : "NOR"
+                                    size: size
                                 };
 
                                 results.push(s);
@@ -155,7 +167,7 @@ var Cloudvideo = function () {
                                     result: results
                                 });
 
-                            case 31:
+                            case 30:
                             case 'end':
                                 return _context2.stop();
                         }

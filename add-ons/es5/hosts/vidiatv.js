@@ -62,7 +62,7 @@ var Vidiatv = function () {
         key: 'getLink',
         value: function () {
             var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url) {
-                var _libs, httpRequest, cheerio, arrVideoQuality, html, results, m, a, ff, reg;
+                var _libs, httpRequest, cheerio, arrVideoQuality, html, $, results, size, m, a, ff, reg;
 
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
@@ -84,8 +84,26 @@ var Vidiatv = function () {
                                 throw new Error("LINK DIE");
 
                             case 7:
+                                $ = cheerio.load(html);
                                 results = [];
-                                _context2.prev = 8;
+                                size = 'NOR';
+
+
+                                $('#download-tab .table tr').each(function () {
+                                    var t = $(this).text();
+                                    if (t.toLowerCase().indexOf('normal quality') != -1) {
+                                        var m = t.match(/\d+(\.\d+)?\s(GB?|MB?)/i);
+                                        size = m != null ? m[0] : 0;
+
+                                        if (size.toLowerCase().indexOf('mb') != -1) {
+                                            size = '0.' + size.replace(/\smb?/i, '').replace('.', '');
+                                        }
+
+                                        if (size !== 0) size = parseFloat(size.replace(/\sgb/i, '')).toFixed(2);
+                                    }
+                                });
+
+                                _context2.prev = 11;
                                 m = void 0, a = void 0;
 
                                 m = html.split('eval(function(p,a,c,k,e,d)')[1];
@@ -99,44 +117,44 @@ var Vidiatv = function () {
                                 eval(ff);
                                 reg = /file"?:\s?"([^"]+)/g;
 
-                            case 18:
+                            case 21:
                                 if (!(m = reg.exec(a))) {
-                                    _context2.next = 26;
+                                    _context2.next = 29;
                                     break;
                                 }
 
                                 if (!(m[1].indexOf('jpg') != -1 || m[1].indexOf('png') != -1)) {
-                                    _context2.next = 21;
+                                    _context2.next = 24;
                                     break;
                                 }
 
-                                return _context2.abrupt('continue', 18);
+                                return _context2.abrupt('continue', 21);
 
-                            case 21:
+                            case 24:
                                 if (!(m[1].indexOf('http') !== 0)) {
-                                    _context2.next = 23;
+                                    _context2.next = 26;
                                     break;
                                 }
 
-                                return _context2.abrupt('continue', 18);
-
-                            case 23:
-                                results.push({
-                                    file: m[1], label: 'NOR', type: "direct", size: 'NOR'
-                                });
-                                _context2.next = 18;
-                                break;
+                                return _context2.abrupt('continue', 21);
 
                             case 26:
-                                _context2.next = 31;
+                                results.push({
+                                    file: m[1], label: 'NOR', type: "direct", size: size
+                                });
+                                _context2.next = 21;
                                 break;
 
-                            case 28:
-                                _context2.prev = 28;
-                                _context2.t0 = _context2['catch'](8);
-                                throw new Error(_context2.t0);
+                            case 29:
+                                _context2.next = 34;
+                                break;
 
                             case 31:
+                                _context2.prev = 31;
+                                _context2.t0 = _context2['catch'](11);
+                                throw new Error(_context2.t0);
+
+                            case 34:
                                 return _context2.abrupt('return', {
                                     host: {
                                         url: url,
@@ -145,12 +163,12 @@ var Vidiatv = function () {
                                     result: results
                                 });
 
-                            case 32:
+                            case 35:
                             case 'end':
                                 return _context2.stop();
                         }
                     }
-                }, _callee2, this, [[8, 28]]);
+                }, _callee2, this, [[11, 31]]);
             }));
 
             function getLink(_x2) {
