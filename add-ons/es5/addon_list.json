@@ -463,7 +463,7 @@
             "domain": [
                 "vidia.tv"
             ],
-            "version": "0.0.3",
+            "version": "0.0.4",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vidiatv.js"
         },
         "upstream": {

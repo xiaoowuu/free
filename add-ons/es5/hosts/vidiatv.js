@@ -158,7 +158,7 @@ var Vidiatv = function () {
                                 return _context2.abrupt('return', {
                                     host: {
                                         url: url,
-                                        name: "Nvidia"
+                                        name: "VidiaTV"
                                     },
                                     result: results
                                 });
