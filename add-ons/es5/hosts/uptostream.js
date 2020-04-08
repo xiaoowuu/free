@@ -72,7 +72,7 @@ var Uptostream = function () {
         key: 'getLink',
         value: function () {
             var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(url) {
-                var _libs, httpRequest, cheerio, arrVideoQuality, results, html, m, window, arrPromise;
+                var _libs, httpRequest, cheerio, arrVideoQuality, results, html, ff, f, sources, arrPromise;
 
                 return regeneratorRuntime.wrap(function _callee3$(_context3) {
                     while (1) {
@@ -105,21 +105,35 @@ var Uptostream = function () {
                                 throw new Error("LINK DIE");
 
                             case 11:
-                                _context3.prev = 11;
-                                m = html.match(/(window\.sources = ([^;]+))/);
-                                window = {};
+                                ff = url.split('/');
 
-                                eval(m[1]);
+                                ff = ff[ff.length - 1];
+                                console.log('uptostream ff', ff);
+                                _context3.next = 16;
+                                return httpRequest.getHTML('https://uptostream.com/api/streaming/source/get?token=null&file_code=' + ff);
 
-                                arrVideoQuality = window.sources;
-                                arrPromise = arrVideoQuality.map(function () {
+                            case 16:
+                                f = _context3.sent;
+
+                                console.log('uptostream done ff', ff);
+                                f = JSON.parse(f);
+                                f = f.data.sources;
+                                _context3.next = 22;
+                                return httpRequest.post('http://getutb.streammov.net/utb', {}, { data: f });
+
+                            case 22:
+                                sources = _context3.sent;
+
+                                sources = sources.data;
+                                //let sources = fk(f);
+                                arrPromise = sources.map(function () {
                                     var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(val) {
-                                        var label, isDie;
+                                        var isDie;
                                         return regeneratorRuntime.wrap(function _callee2$(_context2) {
                                             while (1) {
                                                 switch (_context2.prev = _context2.next) {
                                                     case 0:
-                                                        label = val.label;
+                                                        console.log('uptostream val', val);
                                                         _context2.next = 3;
                                                         return httpRequest.isLinkDie(val.src);
 
@@ -128,9 +142,8 @@ var Uptostream = function () {
 
 
                                                         if (isDie != false) {
-
                                                             results.push({
-                                                                file: val.src, label: label, type: "direct", size: isDie
+                                                                file: val.src, label: 'NOR', type: "direct", size: isDie
                                                             });
                                                         }
 
@@ -146,10 +159,10 @@ var Uptostream = function () {
                                         return _ref3.apply(this, arguments);
                                     };
                                 }());
-                                _context3.next = 19;
+                                _context3.next = 27;
                                 return Promise.all(arrPromise);
 
-                            case 19:
+                            case 27:
                                 return _context3.abrupt('return', {
                                     host: {
                                         url: url,
@@ -158,17 +171,12 @@ var Uptostream = function () {
                                     result: results
                                 });
 
-                            case 22:
-                                _context3.prev = 22;
-                                _context3.t0 = _context3['catch'](11);
-                                throw new Error(_context3.t0);
-
-                            case 25:
+                            case 28:
                             case 'end':
                                 return _context3.stop();
                         }
                     }
-                }, _callee3, this, [[11, 22]]);
+                }, _callee3, this);
             }));
 
             function getLink(_x2) {
@@ -181,6 +189,18 @@ var Uptostream = function () {
 
     return Uptostream;
 }();
+
+function fk(f) {
+    try {
+        eval(f);
+        console.log('uptostream sources', sources);
+        return sources;
+    } catch (e) {
+        console.log('uptostream e', e);
+        console.log('uptostream e f', f);
+        return [];
+    }
+}
 
 thisSource.function = function (libs, settings) {
     return new Uptostream({ libs: libs, settings: settings });
