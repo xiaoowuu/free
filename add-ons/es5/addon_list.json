@@ -3,7 +3,7 @@
         "5movies": {
             "name": "5movies",
             "domain": "5movies.to",
-            "version": "0.4.14",
+            "version": "0.4.15",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/5movies.js",
             "type": [
                 "movie",
