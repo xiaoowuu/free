@@ -225,6 +225,26 @@
                 "movie",
                 "tv"
             ]
+        },
+        "flixanity": {
+            "name": "flixanity",
+            "domain": "flixanity.dis",
+            "version": "0.0.1",
+            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/flixanity.js",
+            "type": [
+                "movie",
+                "tv"
+            ]
+        },
+        "nines": {
+            "name": "nines",
+            "domain": "nines.dis",
+            "version": "0.0.1",
+            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/nines.js",
+            "type": [
+                "movie",
+                "tv"
+            ]
         }
     },
     "hosts": {
