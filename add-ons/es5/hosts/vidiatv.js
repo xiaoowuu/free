@@ -119,7 +119,7 @@ var Vidiatv = function () {
 
                             case 21:
                                 if (!(m = reg.exec(a))) {
-                                    _context2.next = 31;
+                                    _context2.next = 32;
                                     break;
                                 }
 
@@ -131,7 +131,7 @@ var Vidiatv = function () {
                                 return _context2.abrupt('continue', 21);
 
                             case 24:
-                                if (!(m[1].indexOf('http') !== 0)) {
+                                if (!(m[1].indexOf('http') !== 0 || m[1].indexOf('.vtt') != -1)) {
                                     _context2.next = 26;
                                     break;
                                 }
@@ -139,7 +139,7 @@ var Vidiatv = function () {
                                 return _context2.abrupt('continue', 21);
 
                             case 26:
-                                if (!(m[1].toLowerCase().indexOf('.srt') !== 0)) {
+                                if (!(m[1].toLowerCase().indexOf('.srt') != -1)) {
                                     _context2.next = 28;
                                     break;
                                 }
@@ -147,22 +147,23 @@ var Vidiatv = function () {
                                 return _context2.abrupt('continue', 21);
 
                             case 28:
+                                console.log(m[1]);
                                 results.push({
                                     file: m[1], label: 'NOR', type: "direct", size: size
                                 });
                                 _context2.next = 21;
                                 break;
 
-                            case 31:
-                                _context2.next = 36;
+                            case 32:
+                                _context2.next = 37;
                                 break;
 
-                            case 33:
-                                _context2.prev = 33;
+                            case 34:
+                                _context2.prev = 34;
                                 _context2.t0 = _context2['catch'](11);
                                 throw new Error(_context2.t0);
 
-                            case 36:
+                            case 37:
                                 return _context2.abrupt('return', {
                                     host: {
                                         url: url,
@@ -171,12 +172,12 @@ var Vidiatv = function () {
                                     result: results
                                 });
 
-                            case 37:
+                            case 38:
                             case 'end':
                                 return _context2.stop();
                         }
                     }
-                }, _callee2, this, [[11, 33]]);
+                }, _callee2, this, [[11, 34]]);
             }));
 
             function getLink(_x2) {
