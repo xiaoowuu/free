@@ -117,7 +117,7 @@ var ClipWatching = function () {
                                 }
                                 */
 
-                                m = html.match(/src: "([^"]+)/);
+                                m = html.match(/sources: \["([^"]+)/);
 
                                 if (!(m[1].indexOf('http') !== 0)) {
                                     _context2.next = 11;
