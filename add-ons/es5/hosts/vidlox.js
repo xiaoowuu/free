@@ -75,15 +75,17 @@ var VidLox = function () {
     }, {
         key: 'getLink',
         value: function () {
-            var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url) {
-                var _libs, httpRequest, cheerio, newUrl, _parts, html, ClapprThumbnailsPlugin, LevelSelector, thumbs, ClapprSubtitle, player, result, isDie, isDie1, isDie2;
+            var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(url) {
+                var _this = this;
 
-                return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                var _libs, httpRequest, cheerio, newUrl, html, m, result, mP;
+
+                return regeneratorRuntime.wrap(function _callee3$(_context3) {
                     while (1) {
-                        switch (_context2.prev = _context2.next) {
+                        switch (_context3.prev = _context3.next) {
                             case 0:
                                 if (!(url.search('https://') == -1 && url.search('http://') == -1)) {
-                                    _context2.next = 2;
+                                    _context3.next = 2;
                                     break;
                                 }
 
@@ -94,95 +96,70 @@ var VidLox = function () {
                                 newUrl = url;
 
 
-                                if (!newUrl.includes("embed")) {
-
-                                    // https://vidlox.tv/vunb9b0ihb8d
-                                    _parts = newUrl.split("/");
-
-                                    _parts[_parts.length - 1] = "embed-" + _parts[_parts.length - 1];
-                                    newUrl = _parts.join("/");
+                                if (newUrl.includes("embed")) {
+                                    newUrl = newUrl.replace('embed-', '').replace('.html', '');
                                 }
-                                _context2.next = 7;
+
+                                _context3.next = 7;
                                 return this.checkLive(newUrl);
 
                             case 7:
-                                html = _context2.sent;
+                                html = _context3.sent;
 
                                 if (!(html == false)) {
-                                    _context2.next = 10;
+                                    _context3.next = 10;
                                     break;
                                 }
 
                                 throw new Error("vidlox LINK DIE");
 
                             case 10:
+                                m = html.match(/sources:([^\]]+)/);
 
-                                html = html.substring(html.indexOf("var player = new Clappr.Player"));
-                                html = html.substring(0, 3 + html.indexOf("});"));
-
-                                ClapprThumbnailsPlugin = "", LevelSelector = "", thumbs = "", ClapprSubtitle = "";
-
-
-                                html = html.replace("new Clappr.Player", "");
-                                html = html.replace("var player", "player");
-
-                                eval(html); // player
-                                result = void 0;
-
-
-                                if (!player.sources.length > 0) result = [{ label: "Error", file: "Link dead" }];
-
-                                if (!(player.sources.length === 2)) {
-                                    _context2.next = 25;
+                                if (!(m == undefined)) {
+                                    _context3.next = 13;
                                     break;
                                 }
 
-                                _context2.next = 21;
-                                return httpRequest.isLinkDie(player.sources[1]);
+                                throw new Error("vidlox LINK DIE 1");
 
-                            case 21:
-                                isDie = _context2.sent;
+                            case 13:
+                                m = m[1].trim() + ']';
+                                m = JSON.parse(m);
 
-                                if (!(player.sources[1].indexOf('http') !== 0)) {
-                                    _context2.next = 24;
-                                    break;
-                                }
+                                result = [];
+                                mP = m.map(function () {
+                                    var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(u) {
+                                        var isDie;
+                                        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                                            while (1) {
+                                                switch (_context2.prev = _context2.next) {
+                                                    case 0:
+                                                        _context2.next = 2;
+                                                        return httpRequest.isLinkDie(u);
 
-                                throw new Error('Invalid link');
+                                                    case 2:
+                                                        isDie = _context2.sent;
 
-                            case 24:
-                                result = [{ label: "NOR", file: player.sources[1], type: 'direct', size: isDie }];
+                                                        result.push({ label: "NOR", file: u, type: 'direct', size: isDie });
 
-                            case 25:
-                                if (!(player.sources.length === 3)) {
-                                    _context2.next = 35;
-                                    break;
-                                }
+                                                    case 4:
+                                                    case 'end':
+                                                        return _context2.stop();
+                                                }
+                                            }
+                                        }, _callee2, _this);
+                                    }));
 
-                                if (!(player.sources[1].indexOf('http') !== 0 || player.sources[2].indexOf('http') !== 0)) {
-                                    _context2.next = 28;
-                                    break;
-                                }
+                                    return function (_x3) {
+                                        return _ref3.apply(this, arguments);
+                                    };
+                                }());
+                                _context3.next = 19;
+                                return Promise.all(mP);
 
-                                throw new Error('Invalid link');
-
-                            case 28:
-                                _context2.next = 30;
-                                return httpRequest.isLinkDie(player.sources[2]);
-
-                            case 30:
-                                isDie1 = _context2.sent;
-                                _context2.next = 33;
-                                return httpRequest.isLinkDie(player.sources[1]);
-
-                            case 33:
-                                isDie2 = _context2.sent;
-
-
-                                result = [{ label: "NOR", file: player.sources[2], type: 'direct', size: isDie1 }, { label: "SD", file: player.sources[1], type: 'direct', size: isDie2 }];
-
-                            case 35:
-                                return _context2.abrupt('return', {
+                            case 19:
+                                return _context3.abrupt('return', {
                                     host: {
                                         url: url,
                                         name: "vidlox"
@@ -190,12 +167,12 @@ var VidLox = function () {
                                     result: result
                                 });
 
-                            case 36:
+                            case 20:
                             case 'end':
-                                return _context2.stop();
+                                return _context3.stop();
                         }
                     }
-                }, _callee2, this);
+                }, _callee3, this);
             }));
 
             function getLink(_x2) {
