@@ -60,7 +60,7 @@ var Fembed = function () {
                                 sources = [];
                                 s = url.split('/');
                                 id = s[s.length - 1];
-                                u = 'https://www.fembed.com/api/source/' + id;
+                                u = 'https://feurl.com/api/source/' + id;
                                 _context3.next = 7;
                                 return httpRequest.post(u, {}, { r: '', d: 'www.fembed.com' });
 
