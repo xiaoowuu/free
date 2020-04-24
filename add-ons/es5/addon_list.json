@@ -210,7 +210,7 @@
         "newepisodes": {
             "name": "newepisodes",
             "domain": "newepisodes.dis",
-            "version": "0.0.8",
+            "version": "0.0.9",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/newepisodes.js",
             "type": [
                 "tv"
