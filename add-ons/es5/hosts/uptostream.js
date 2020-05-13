@@ -118,6 +118,7 @@ var Uptostream = function () {
                                 console.log('uptostream done ff', ff);
                                 f = JSON.parse(f);
                                 f = f.data.sources;
+                                //let sources = await httpRequest.post('http://localhost:3001/utb', {}, {data: f});
                                 _context3.next = 22;
                                 return httpRequest.post('http://getutb.streammov.net/utb', {}, { data: f });
 

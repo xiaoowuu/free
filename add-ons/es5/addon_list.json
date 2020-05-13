@@ -263,6 +263,16 @@
             "type": [
                 "movie"
             ]
+        },
+        "1primewire": {
+            "name": "1primewire",
+            "domain": "1primewire.dis",
+            "version": "0.0.2",
+            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/1primewire.js?v1",
+            "type": [
+                "movie",
+                "tv"
+            ]
         }
     },
     "hosts": {
@@ -513,6 +523,22 @@
             ],
             "version": "0.0.1",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/upstream.js"
+        },
+        "vidsrc": {
+            "name": "vidsrc",
+            "domain": [
+                "vidsrc.xyz"
+            ],
+            "version": "0.0.1",
+            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/vidsrc.js"
+        },
+        "hls": {
+            "name": "hls",
+            "domain": [
+                "loadshare.org"
+            ],
+            "version": "0.0.1",
+            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/hls.js"
         }
     }
 }
