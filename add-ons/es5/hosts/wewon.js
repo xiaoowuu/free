@@ -6,16 +6,16 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Direct = function () {
-    function Direct(props) {
-        _classCallCheck(this, Direct);
+var Wewon = function () {
+    function Wewon(props) {
+        _classCallCheck(this, Wewon);
 
         this.libs = props.libs;
         this.settings = props.settings;
         this.state = {};
     }
 
-    _createClass(Direct, [{
+    _createClass(Wewon, [{
         key: 'convertToEmbed',
         value: function convertToEmbed() {
 
@@ -26,7 +26,7 @@ var Direct = function () {
         key: 'getLink',
         value: function () {
             var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(url) {
-                var _libs, httpRequest, cheerio, results, isDie;
+                var _libs, httpRequest, cheerio, results;
 
                 return regeneratorRuntime.wrap(function _callee$(_context) {
                     while (1) {
@@ -42,44 +42,26 @@ var Direct = function () {
                             case 2:
                                 _libs = this.libs, httpRequest = _libs.httpRequest, cheerio = _libs.cheerio;
                                 results = [];
-                                isDie = 'NOR';
-                                _context.prev = 5;
-                                _context.next = 8;
-                                return httpRequest.isLinkDie(url);
 
-                            case 8:
-                                isDie = _context.sent;
-                                _context.next = 14;
-                                break;
 
-                            case 11:
-                                _context.prev = 11;
-                                _context.t0 = _context['catch'](5);
-
-                                console.log('direct_err', _context.t0);
-
-                            case 14:
-
-                                if (isDie != false && isDie != 'NOR') {
-                                    results.push({
-                                        file: url, label: 'NOR', type: "direct", size: isDie
-                                    });
-                                }
+                                results.push({
+                                    file: url, label: 'NOR', type: "Wewon", size: '1.26'
+                                });
 
                                 return _context.abrupt('return', {
                                     host: {
                                         url: url,
-                                        name: "Direct"
+                                        name: "Wewon"
                                     },
                                     result: results
                                 });
 
-                            case 16:
+                            case 6:
                             case 'end':
                                 return _context.stop();
                         }
                     }
-                }, _callee, this, [[5, 11]]);
+                }, _callee, this);
             }));
 
             function getLink(_x) {
@@ -90,9 +72,9 @@ var Direct = function () {
         }()
     }]);
 
-    return Direct;
+    return Wewon;
 }();
 
 thisSource.function = function (libs, settings) {
-    return new Direct({ libs: libs, settings: settings });
+    return new Wewon({ libs: libs, settings: settings });
 };
