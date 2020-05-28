@@ -63,7 +63,7 @@
         "watchepisodes4": {
             "name": "watchepisodes4",
             "domain": "watchepisodes4.com",
-            "version": "0.4.18",
+            "version": "0.4.19",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/watchepisodes4.js",
             "type": [
                 "tv"
@@ -210,8 +210,8 @@
         "newepisodes": {
             "name": "newepisodes",
             "domain": "newepisodes.dis",
-            "version": "0.0.9",
-            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/newepisodes.js",
+            "version": "0.0.10",
+            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/newepisodes.js?v10",
             "type": [
                 "tv"
             ]
@@ -269,6 +269,16 @@
             "domain": "1primewire.dis",
             "version": "0.0.2",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/1primewire.js?v1",
+            "type": [
+                "movie",
+                "tv"
+            ]
+        },
+        "vmovie": {
+            "name": "vmovie",
+            "domain": "vmovie.dis",
+            "version": "0.0.2",
+            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/vmovie.js?v1",
             "type": [
                 "movie",
                 "tv"
@@ -539,6 +549,14 @@
             ],
             "version": "0.0.1",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/hls.js"
+        },
+        "wewon": {
+            "name": "wewon",
+            "domain": [
+                "wewon.to"
+            ],
+            "version": "0.0.1",
+            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/wewon.js"
         }
     }
 }
