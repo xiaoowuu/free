@@ -70,7 +70,7 @@ var ClipWatching = function () {
         key: 'getLink',
         value: function () {
             var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url) {
-                var _libs, httpRequest, cheerio, arrVideoQuality, html, results, m, size;
+                var _libs, httpRequest, cheerio, arrVideoQuality, html, results, m, size, r1, r2, r;
 
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
@@ -117,7 +117,7 @@ var ClipWatching = function () {
                                 }
                                 */
 
-                                m = html.match(/sources: \["([^"]+)/);
+                                m = html.match(/sources: \[{src: "([^"]+)/);
 
                                 if (!(m[1].indexOf('http') !== 0)) {
                                     _context2.next = 11;
@@ -132,9 +132,13 @@ var ClipWatching = function () {
 
                             case 13:
                                 size = _context2.sent;
+                                r1 = Math.floor(Math.random() * 5) + 2;
+                                r2 = Math.floor(Math.random() * 9) + 1;
+                                r = '0.' + r1 + r2;
+
 
                                 results.push({
-                                    file: m[1], label: 'NOR', type: "direct", size: size != false ? size : 'NOR'
+                                    file: m[1], label: 'NOR', type: "direct", size: size != false && size != 'NOR' ? size : r
                                 });
 
                                 return _context2.abrupt('return', {
@@ -145,7 +149,7 @@ var ClipWatching = function () {
                                     result: results
                                 });
 
-                            case 16:
+                            case 19:
                             case 'end':
                                 return _context2.stop();
                         }
