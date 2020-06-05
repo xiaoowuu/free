@@ -6,6 +6,12 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function fuckfuck(p, a, c, k, e, d) {
+    while (c--) {
+        if (k[c]) p = p.replace(new RegExp('\\b' + c.toString(a) + '\\b', 'g'), k[c]);
+    }return p;
+}
+
 var Cloudvideo = function () {
     function Cloudvideo(props) {
         _classCallCheck(this, Cloudvideo);
@@ -68,7 +74,7 @@ var Cloudvideo = function () {
         key: 'getLink',
         value: function () {
             var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url) {
-                var _libs, httpRequest, cheerio, results, html, m, op, id, fname, hash, posts, $, size, u, s;
+                var _libs, httpRequest, cheerio, results, html, m, op, id, fname, hash, posts, $, size, a, ff, s;
 
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
@@ -141,19 +147,32 @@ var Cloudvideo = function () {
                                     }
                                 });
 
-                                u = $('source').attr('src');
+                                //let u = $('source').attr('src');
+                                //if(u.indexOf('http') !== 0) throw new Error('Invalid link');
+                                a = void 0;
 
-                                if (!(u.indexOf('http') !== 0)) {
-                                    _context2.next = 27;
+                                m = html.data.split('eval(function(p,a,c,k,e,d)')[1];
+                                m = m.split('</script>')[0].trim();
+                                m = 'eval(function(p,a,c,k,e,d)' + m;
+
+                                ff = m.split('return p}')[1];
+
+                                ff = 'a = fuckfuck' + ff;
+                                ff = ff.replace(/\)$/, '');
+                                eval(ff);
+                                m = a.match(/src:"([^"]+)/);
+
+                                if (!(m == undefined)) {
+                                    _context2.next = 35;
                                     break;
                                 }
 
-                                throw new Error('Invalid link');
+                                throw new Error('NO Cloudvideo');
 
-                            case 27:
+                            case 35:
                                 s = {
                                     label: "NOR",
-                                    file: u,
+                                    file: m[1],
                                     type: "direct",
                                     size: size
                                 };
@@ -167,7 +186,7 @@ var Cloudvideo = function () {
                                     result: results
                                 });
 
-                            case 30:
+                            case 38:
                             case 'end':
                                 return _context2.stop();
                         }
