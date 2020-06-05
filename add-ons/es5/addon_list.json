@@ -427,9 +427,10 @@
                 "serverdl.pw",
                 "mihanpix.net",
                 "upfdl.com",
-                "saberfun.name"
+                "saberfun.name",
+                "perserver.site"
             ],
-            "version": "0.1.13",
+            "version": "0.1.14",
             "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/hosts/direct.js"
         },
         "uptostream": {
