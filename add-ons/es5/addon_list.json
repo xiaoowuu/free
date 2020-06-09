@@ -293,6 +293,26 @@
                 "movie",
                 "tv"
             ]
+        },
+        "popcorntimeis": {
+            "name": "popcorntimeis",
+            "domain": "popcorntimeis.dis",
+            "version": "0.0.1",
+            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/popcorntimeis.js?v1",
+            "type": [
+                "movie",
+                "tv"
+            ]
+        },
+        "watch123movies": {
+            "name": "watch123movies",
+            "domain": "watch123movies.dis",
+            "version": "0.0.1",
+            "url": "https://raw.githubusercontent.com/orchidshl1/free/master/add-ons/es5/providers/watch123movies.js?v1",
+            "type": [
+                "movie",
+                "tv"
+            ]
         }
     },
     "hosts": {
